@@ -1,0 +1,727 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Investment Research</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="img/p.png">
+<style type="text/css">
+.wrapper{margin:0 auto;padding-top:28px;max-width:90%}.table{margin:0 0 40px 0;width:100%;box-shadow:0 1px 3px rgba(0,0,0,.2);display:table}@media screen and (max-width:888px){.table{display:block}}.row{display:table-row;background:#f6f6f6}.row:nth-of-type(odd){background:#e9e9e9}.row.header{font-weight:900;color:#fff;background:#C0392B}.row.red{background:#C0392B}.row.teal{background:#27AE60}.row.blue{background:#fff}.row.dark{background:#2c3e50}.row.orange{background:#D35400}.row.violet{background:#16A085}.row.purple{background:#2980B9}.row.green{background:#1B5E20}.row.gray{background:#7f8c8d}@media screen and (max-width:888px){.row{padding:8px 0;display:block}}.cell{padding:6px 12px;display:table-cell;text-align:right}.cell.name{text-align:left}@media screen and (max-width:888px){.cell{padding:2px 12px;display:block}}#options{display:none;margin-bottom:16px;text-align:left}@media screen and (max-width:888px){#options{margin-left:30px;text-align:left}}.pure-button{display:inline-block;zoom:1;line-height:normal;white-space:nowrap;vertical-align:middle;text-align:center;cursor:pointer;-webkit-user-drag:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;box-sizing:border-box}.pure-button::-moz-focus-inner{padding:0;border:0}.pure-button-group{letter-spacing:-.31em;*letter-spacing:normal;*word-spacing:-.43em;text-rendering:optimizespeed}.opera-only :-o-prefocus,.pure-button-group{word-spacing:-.43em}.pure-button-group .pure-button{letter-spacing:normal;word-spacing:normal;vertical-align:top;text-rendering:auto}.pure-button{font-family:inherit;font-size:100%;padding:.125em .5em;color:#222;border:1px solid #999;border:none rgba(0,0,0,0);background-color:#f3f3f3;text-decoration:none;border-radius:2px}.pure-button-hover,.pure-button:hover,.pure-button:focus{filter:alpha(opacity=90);background-image:-webkit-linear-gradient(transparent,rgba(0,0,0,.05) 40%,rgba(0,0,0,.1));background-image:linear-gradient(transparent,rgba(0,0,0,.05) 40%,rgba(0,0,0,.1))}.pure-button:focus{outline:0}.pure-button-active,.pure-button:active{box-shadow:0 0 0 1px rgba(0,0,0,.15) inset,0 0 6px rgba(0,0,0,.2) inset;border-color:#000\9}.pure-button[disabled],.pure-button-disabled,.pure-button-disabled:hover,.pure-button-disabled:focus,.pure-button-disabled:active{border:none;background-image:none;filter:alpha(opacity=40);opacity:.4;cursor:not-allowed;box-shadow:none;pointer-events:none}.pure-button-hidden{display:none}.pure-button-primary,.pure-button-selected,a.pure-button-primary,a.pure-button-selected{background-color:rgb(0,120,231);color:#fff}.pure-button-group .pure-button{margin:0;border-radius:0;border-right:1px solid #111;border-right:1px solid rgba(0,0,0,.2)}.pure-button-group .pure-button:first-child{border-top-left-radius:2px;border-bottom-left-radius:2px}.pure-button-group .pure-button:last-child{border-top-right-radius:2px;border-bottom-right-radius:2px;border-right:none}label{margin-right:30px}.chart{position:relative}.highcharts-container{position:inherit!important}.highcharts-tooltip span{background-color:white;border:1px solid #4572A7;opacity:1;padding:8px;z-index:2}#selectrange{position:absolute;right:48px;top:40px;float:right;display:none;z-index:1}.arrow{position:relative;top:3px}html{font-family:Lucida Grande,Lucida Sans Unicode,Verdana,Arial,Helvetica,sans-serif;font-size:14px;height:100%;margin-bottom:0;padding-bottom:0}body{margin-top:20px;margin-bottom:0;padding-bottom:0;background-color:#fff;color:#222}.rpct{color:#c00000}.gpct{color:green}a:link{color:#1A0DAB;text-decoration:none}a:visited{color:#609}a:hover{text-decoration:underline}a:active{color:#1A0DAB}#togglesources,#toggleoptions,#mark{font-size:13px;position:relative;bottom:7px}#sources{font-size:13px;display:none;position:relative;bottom:8px;margin-bottom:8px}#eris{position:absolute;left:40px;top:7px;z-index:1}form{display:inline-block;position:relative;bottom:1px}input,select,textarea{font-family:inherit;color:#222}input{border:1px solid #D8D8D8;text-align:center}input[type=checkbox],input[type=radio]{vertical-align:middle;position:relative;bottom:1px}input[type=text]{height:21px}input[type=radio]{bottom:2px}
+</style>
+<script src="jquery-3.1.1.min.js"></script>
+<script src="highstock.js"></script>
+<script type="text/javascript">
+$(function(){var e=[{color:"#E6E6E6",from:Date.UTC(1873,9),to:Date.UTC(1879,2)},{color:"#E6E6E6",from:Date.UTC(1882,2),to:Date.UTC(1885,4)},{color:"#E6E6E6",from:Date.UTC(1887,2),to:Date.UTC(1888,3)},{color:"#E6E6E6",from:Date.UTC(1890,6),to:Date.UTC(1891,4)},{color:"#E6E6E6",from:Date.UTC(1892,12),to:Date.UTC(1894,5)},{color:"#E6E6E6",from:Date.UTC(1895,11),to:Date.UTC(1897,5)},{color:"#E6E6E6",from:Date.UTC(1899,5),to:Date.UTC(1900,11)},{color:"#E6E6E6",from:Date.UTC(1902,8),to:Date.UTC(1904,7)},{color:"#E6E6E6",from:Date.UTC(1907,4),to:Date.UTC(1908,5)},{color:"#E6E6E6",from:Date.UTC(1909,12),to:Date.UTC(1911,12)},{color:"#E6E6E6",from:Date.UTC(1912,12),to:Date.UTC(1914,11)},{color:"#E6E6E6",from:Date.UTC(1918,7),to:Date.UTC(1919,2)},{color:"#E6E6E6",from:Date.UTC(1919,12),to:Date.UTC(1921,6)},{color:"#E6E6E6",from:Date.UTC(1923,4),to:Date.UTC(1924,6)},{color:"#E6E6E6",from:Date.UTC(1926,9),to:Date.UTC(1927,10)},{color:"#E6E6E6",from:Date.UTC(1929,7),to:Date.UTC(1933,2)},{color:"#E6E6E6",from:Date.UTC(1937,4),to:Date.UTC(1938,5)},{color:"#E6E6E6",from:Date.UTC(1945,1),to:Date.UTC(1945,9)},{color:"#E6E6E6",from:Date.UTC(1948,10),to:Date.UTC(1949,9)},{color:"#E6E6E6",from:Date.UTC(1953,6),to:Date.UTC(1954,4)},{color:"#E6E6E6",from:Date.UTC(1957,7),to:Date.UTC(1958,3)},{color:"#E6E6E6",from:Date.UTC(1960,3),to:Date.UTC(1961,2)},{color:"#E6E6E6",from:Date.UTC(1969,11),to:Date.UTC(1970,10)},{color:"#E6E6E6",from:Date.UTC(1973,10),to:Date.UTC(1975,2)},{color:"#E6E6E6",from:Date.UTC(1979,12),to:Date.UTC(1980,6)},{color:"#E6E6E6",from:Date.UTC(1981,6),to:Date.UTC(1982,10)},{color:"#E6E6E6",from:Date.UTC(1990,6),to:Date.UTC(1991,2)},{color:"#E6E6E6",from:Date.UTC(2001,2),to:Date.UTC(2001,10)},{color:"#E6E6E6",from:Date.UTC(2007,11),to:Date.UTC(2009,5)}];$.getJSON("data/globalstocks.json",function(t){$.getJSON("data/gold.json",function(a){$.getJSON("data/usd.json",function(o){$.getJSON("data/globalbonds.json",function(i){function r(){$(window).width()<660?($("#selectrange").hide(),$("#container2").hide(),$("#eris").hide(),k.update({title:{x:0},rangeSelector:{buttonPosition:{x:0}}})):($("#selectrange").show(),$("#container2").show(),$("#eris").show(),k.update({title:{align:"left",x:27},rangeSelector:{buttonPosition:{x:27}}}))}function c(){extremes=k.xAxis[0].getExtremes(),minYear=new Date(extremes.dataMin),minMonth=minYear.getUTCMonth(),minYear=minYear.getUTCFullYear(),maxYear=new Date(extremes.dataMax),maxYear=maxYear.getUTCFullYear(),chartDate1=new Date(extremes.min),chartDate2=new Date(extremes.max),chartMonth1=chartDate1.getUTCMonth(),chartYear1=chartDate1.getUTCFullYear(),chartMonth2=chartDate2.getUTCMonth(),chartYear2=chartDate2.getUTCFullYear()}function n(){document.getElementById("ddMonth1").value=chartMonth1,document.getElementById("ddYear1").value=chartYear1,document.getElementById("ddMonth2").value=chartMonth2,document.getElementById("ddYear2").value=chartYear2}function d(e){var t;for(t=e.options.length-1;t>=0;t--)e.remove(t)}function l(e,t,a){if(!e)return!1;d(document.getElementById(e));var t=t||0,a=a||t+100;select=document.getElementById(e);for(var o=a;o>=t;o--){var i=document.createElement("option");i.value=o,i.innerHTML=o,select.appendChild(i)}}function s(e,t){document.getElementById(e).value=t}function g(){halfheight=$(window).height(),halfheight=Math.floor(.64*halfheight),halfheight<400&&(halfheight=400),/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)&&(halfheight=400),halfheight>2e3&&(halfheight=600),s("userheight",halfheight),divcontainer=document.getElementById("container"),divcontainer.style.height=halfheight+"px",k.setSize(void 0,halfheight)}function h(){userheight=document.getElementById("userheight").value,divcontainer=document.getElementById("container"),1==isNaN(userheight)&&(userheight=$(window).height(),userheight=Math.floor(.64*userheight),s("userheight",userheight)),userheight<300&&(userheight=300,s("userheight",userheight)),divcontainer.style.height=userheight+"px",k.setSize(void 0,userheight)}function m(){k.get("ACWI").visible?k.update({navigator:{series:{id:"navigat",data:t}}}):k.get("GAB").visible?k.update({navigator:{series:{id:"navigat",data:i}}}):k.get("Gold").visible?k.update({navigator:{series:{id:"navigat",data:a}}}):k.get("USD").visible?k.update({navigator:{series:{id:"navigat",data:o}}}):M>0&&k.get("Oil").visible?$.getJSON("data/oil.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):D>0&&k.get("USH").visible?$.getJSON("data/ushome.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):O>0&&k.get("USSC").visible?$.getJSON("data/usasc.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):w>0&&k.get("World").visible?$.getJSON("data/halworld.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):J>0&&k.get("Europe").visible?$.getJSON("data/europestocks.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):j>0&&k.get("Japan").visible?$.getJSON("data/japanstocks.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):Y>0&&k.get("US10CH").visible?$.getJSON("data/us10chome.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):W>0&&k.get("EM").visible?$.getJSON("data/emstocks.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):G>0&&k.get("EMAsia").visible?$.getJSON("data/globalrealestate.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):N>0&&k.get("LA").visible?$.getJSON("data/chinastocks.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):I>0&&k.get("USGB").visible?$.getJSON("data/usgovbond.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):R>0&&k.get("USA").visible?$.getJSON("data/usastocks.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):F>0&&k.get("EMSC").visible?$.getJSON("data/emsc.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):H>0&&k.get("WM").visible?$.getJSON("data/halwm.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):B>0&&k.get("EUR").visible?$.getJSON("data/euro.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):L>0&&k.get("WSC").visible?$.getJSON("data/halwsc.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):A>0&&k.get("ESC").visible?$.getJSON("data/halwsc.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):P>0&&k.get("CNY").visible?$.getJSON("data/renminbi.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):z>0&&k.get("BTC").visible&&$.getJSON("data/bitcoin.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})})}function u(){var e=function(){return this.id},t=$(":checkbox:checked").map(e).get(),a=$(":checkbox:disabled").map(e).get(),/*t=t[t.length-1],*/a=a[a.length-1];1==T&&$("#"+t).prop("disabled",!0),T>1&&$("#"+a).prop("disabled",!1)}function p(){c(),extremes.userMin<=extremes.dataMin&&setTimeout(function(){k.update({rangeSelector:{selected:3}})},100)}function v(e,t){$(":checkbox").prop("disabled",!0),setTimeout(function(){e.visible?T>1&&(T-=1,e.hide(),b(t),m(),$(":checkbox").prop("disabled",!1),1==T&&u(),p()):(T+=1,e.show(),f(t),$(":checkbox").prop("disabled",!1),2==T&&u(),m(),c(),l("ddYear1",minYear,maxYear),l("ddYear2",minYear,maxYear),n())},1)}function b(e){e.options.showInLegend=!1,e.legendItem=null,k.legend.destroyItem(e),k.legend.render()}function f(e){e.options.showInLegend=!0,k.legend.renderItem(e),k.legend.render()}function S(e){c(),(e!==e||e>minYear)&&(l("ddYear1",minYear,maxYear),l("ddYear2",minYear,maxYear),n())}function E(){2==(T+=1)&&u(),m()}Highcharts.setOptions({lang:{rangeSelectorZoom:"",rangeSelectorFrom:"",rangeSelectorTo:"",thousandsSep:""}});var k=Highcharts.stockChart("container",{chart:{spacingBottom:17,zoomType:"x",marginRight:49,events:{load:function(e){}}},title:{align:"left",style:{color:"#222222"},text:"Historical Asset Class Returns",margin:7,y:10,x:27},legend:{y:6,enabled:!0,borderColor:"#D8D8D8",borderWidth:1,itemStyle:{fontSize:"14px",cursor:"default"},itemMarginTop:4,labelFormatter:function(){return'<span style="color:'+this.color+';">'+this.name+"</span>"}},plotOptions:{series:{events:{legendItemClick:function(e){event.preventDefault()}}}},rangeSelector:{allButtonsEnabled:!0,inputDateFormat:"%b %Y",inputEditDateFormat:"%b %Y",buttonPosition:{x:27},inputPosition:{y:-5},labelStyle:{y:50},inputBoxHeight:14,inputBoxWidth:70,inputStyle:{visibility:"hidden"},buttonTheme:{style:{color:"#222222"},height:15},buttons:[{type:"year",count:1,text:"1Y"},{type:"year",count:5,text:"5Y"},{type:"year",count:10,text:"10Y"},{type:"all",text:"Max"}]},xAxis:[{ordinal:!1,minRange:2,dateTimeLabelFormats:{month:"%b %Y"},events:{afterSetExtremes:function(){c(),n()}},labels:{style:{color:"#444444",fontSize:"12px"}},plotBands:e}],yAxis:[{tickPixelInterval:36,type:"logarithmic",gridLineColor:"#D8D8D8",lineWidth:1,plotLines:[{value:100,width:1,color:"#333333",zIndex:1}],labels:{align:"right",x:44,y:5,formatter:function(){return Number.prototype.countDecimals=function(){return Math.round(this.valueOf())===this.valueOf()?0:this.toString().split(".")[1].length||0},this.value=this.value-100,this.value.countDecimals()>1&&(this.value=this.value.toFixed(1)),this.value>=1e3&&this.value<1e4&&(this.value=this.value/1e3,1.9==this.value&&(this.value=2),2.9==this.value&&(this.value=3),3.9==this.value&&(this.value=4),4.9==this.value&&(this.value=5),5.9==this.value&&(this.value=6),6.9==this.value&&(this.value=7),7.9==this.value&&(this.value=8),8.9==this.value&&(this.value=9),9.9==this.value&&(this.value=10),this.value=this.value+"k"),this.value>=1e4&&this.value<1e6&&(this.value=this.value/1e3,this.value.countDecimals()>1&&(this.value=this.value.toFixed(1)),this.value=Math.round(this.value),99==this.value&&(this.value=100),1e3==this.value&&(this.value=1),1==this.value?this.value=this.value+"m":1!=this.value&&(this.value=this.value+"k")),this.value>=1e6&&this.value<99e5&&(this.value=this.value/1e6,this.value.countDecimals()>1&&(this.value=this.value.toFixed(1)),1==this.value&&(this.value=1),2==this.value&&(this.value=2),3==this.value&&(this.value=3),4==this.value&&(this.value=4),5==this.value&&(this.value=5),6==this.value&&(this.value=6),7==this.value&&(this.value=7),8==this.value&&(this.value=8),9==this.value&&(this.value=9),this.value=this.value+"m"),this.value>=99e5&&(this.value=this.value/1e6,this.value.countDecimals()>1&&(this.value=this.value.toFixed(1)),this.value=Math.round(this.value),this.value=this.value+"m"),this.value,this.value+"%"},style:{color:"#444444",fontSize:"12px"}}}],tooltip:{borderWidth:0,padding:0,shadow:!1,backgroundColor:"rgba(255,255,255,1)",xDateFormat:"%b %Y",shared:!0,useHTML:!0,valueDecimals:2,formatter:function(){return tooltip_html='<div style="text-align: center">'+Highcharts.dateFormat("%b %Y",this.x)+"</div>",tooltip_html+="<table>",this.points.forEach(function(e){tooltip_html+='<tr style="font-weight: bold; color:'+e.series.color+'"><td>● '+e.series.name+':</td><td style="text-align: right"> '+Highcharts.numberFormat(e.point.change-100,2)+"%</td></tr>"}),tooltip_html+="</table>",tooltip_html}},navigator:{height:25,margin:9,series:{id:"navigat",data:t}},credits:{enabled:!1},series:[{data:[],name:"Global Stocks",type:"scatter",id:"ACWIc",color:"#0343df",marker:{symbol:"circle"}},{compare:"percent",compareBase:100,showInNavigator:!1,name:"Global Stocks",id:"ACWI",data:t,color:"#0343df",tooltip:{valueDecimals:2},linkedTo:":previous"},{data:[],name:"Global Bonds",type:"scatter",id:"GABc",color:"#c20078",marker:{symbol:"circle"}},{compare:"percent",compareBase:100,showInNavigator:!1,name:"Global Bonds",id:"GAB",data:i,color:"#c20078",tooltip:{valueDecimals:2},linkedTo:":previous"},{data:[],name:"Gold",type:"scatter",id:"Goldc",color:"#b59410",marker:{symbol:"circle"}},{compare:"percent",compareBase:100,showInNavigator:!1,name:"Gold",id:"Gold",data:a,color:"#b59410",tooltip:{valueDecimals:2},linkedTo:":previous"},{data:[],name:"US Dollar",type:"scatter",id:"USDc",color:"#15b01a",marker:{symbol:"circle"}},{compare:"percent",compareBase:100,showInNavigator:!1,name:"US Dollar",id:"USD",data:o,color:"#15b01a",tooltip:{valueDecimals:2},linkedTo:":previous"}]});extremes=1,chartDate1=1,chartDate2=1,chartMonth1=1,chartYear1=1,chartMonth2=1,chartYear2=1,c(),l("ddYear1",minYear,maxYear),l("ddYear2",minYear,maxYear),n(),k.xAxis[0].setExtremes(Date.UTC(1899,11),Date.UTC(chartYear2,chartMonth2)),r(),g(),$("#togglesources").click(function(){$("#sources").toggle(),$("html, body").scrollTop($(document).height())}),$("#toggleoptions").click(function(){$("#options").toggle(),$("html, body").scrollTop($(document).height())}),logtype=1,document.getElementById("log").onchange=function(){return 1==logtype?($("#container").highcharts().yAxis[0].update({type:"linear"}),void(logtype=2)):2==logtype?($("#container").highcharts().yAxis[0].update({type:"logarithmic"}),void(logtype=1)):void 0},barstype=1,document.getElementById("bars").onchange=function(){return 1==barstype?($("#container").highcharts().xAxis[0].update({plotBands:[]}),void(barstype=2)):barstype>=2?($("#container").highcharts().xAxis[0].update({plotBands:e}),void(barstype=1)):void 0};var C=window.navigator.userAgent,y=C.indexOf("MSIE "),x=C.indexOf("Trident/"),U=C.indexOf("Edge/");(y>0||x>0||U>0)&&(document.getElementById("p2").innerHTML='<span style="white-space:nowrap">&emsp;&emsp;&emsp;&emsp;&ensp;Annual</span> Return %'),$("#heightForm").submit(function(){return h(),!1}),window.onresize=function(){r(),setTimeout(function(){g()},100)},$("#ddMonth1").change(function(e){c(),datevalue=parseInt($(this).val()),chartYear1==chartYear2&&datevalue>=chartMonth2&&(chartMonth2=datevalue+1),k.xAxis[0].setExtremes(Date.UTC(chartYear1,datevalue),Date.UTC(chartYear2,chartMonth2))}),$("#ddYear1").change(function(e){c(),datevalue=parseInt($(this).val()),datevalue>=chartYear2&&(chartYear2=datevalue,chartMonth1>=chartMonth2&&(chartMonth2=chartMonth1+1)),previousMonth=chartMonth1-1,k.xAxis[0].setExtremes(Date.UTC(datevalue,chartMonth1),Date.UTC(chartYear2,chartMonth2))}),$("#ddMonth2").change(function(e){c(),datevalue=parseInt($(this).val()),chartYear1==chartYear2&&datevalue<=chartMonth1&&(chartMonth1=datevalue-1),1871==chartYear2&&0==datevalue&&(chartYear1=1871,chartMonth1=0),k.xAxis[0].setExtremes(Date.UTC(chartYear1,chartMonth1),Date.UTC(chartYear2,datevalue))}),$("#ddYear2").change(function(e){c(),datevalue=parseInt($(this).val()),datevalue<=chartYear1&&(chartYear1=datevalue,chartMonth2<=chartMonth1&&(chartMonth1=chartMonth2-1)),1871==datevalue&&0==chartMonth2&&(chartYear1=1871,chartMonth1=0),k.xAxis[0].setExtremes(Date.UTC(chartYear1,chartMonth1),Date.UTC(datevalue,chartMonth2))}),$("#labelForm").submit(function(){return labelticks=document.getElementById("labelticks").value,1==isNaN(labelticks)&&(labelticks=36,s("labelticks",labelticks)),labelticks<1&&(labelticks=1,s("labelticks",labelticks)),$("#container").highcharts().yAxis[0].update({tickPixelInterval:labelticks}),!1});var T=4;$("#toggleACWI").click(function(){v(k.get("ACWI"),k.get("ACWIc"))}),$("#toggleGAB").click(function(){v(k.get("GAB"),k.get("GABc"))}),$("#toggleGold").click(function(){v(k.get("Gold"),k.get("Goldc"))}),$("#toggleUSD").click(function(){v(k.get("USD"),k.get("USDc"))});var I=0;$("#toggleUSGB").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(I>0)var e=k.get("USGB"),t=k.get("USGBc");if(org1=minYear,1==I&&T>1)return I=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==I&&(document.getElementById("toggleUSGB").checked=!1,$.getJSON("data/usgovbond.json",function(e){T+=1,u(),I=1,k.addSeries({data:[],name:"US Government Bonds",id:"USGBc",type:"scatter",color:"#653700",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#653700",id:"USGB",name:"US Government Bonds",linkedTo:"USGBc",data:e}),document.getElementById("toggleUSGB").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==I&&(I=1,e.show(),f(t),E())},1)});var M=0;$("#toggleOil").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(M>0)var e=k.get("Oil"),t=k.get("Oilc");if(org1=minYear,1==M&&T>1)return M=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==M&&(document.getElementById("toggleOil").checked=!1,$.getJSON("data/oil.json",function(e){T+=1,u(),M=1,k.addSeries({data:[],name:"Crude Oil",id:"Oilc",type:"scatter",color:"#2C2416",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#2C2416",id:"Oil",name:"Crude Oil",linkedTo:"Oilc",data:e}),document.getElementById("toggleOil").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==M&&(M=1,e.show(),f(t),E())},1)});var B=0;$("#toggleEUR").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(B>0)var e=k.get("EUR"),t=k.get("EURc");if(org1=minYear,1==B&&T>1)return B=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==B&&(document.getElementById("toggleEUR").checked=!1,$.getJSON("data/euro.json",function(e){T+=1,u(),B=1,k.addSeries({data:[],name:"Euro",id:"EURc",type:"scatter",color:"#0485d1",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#0485d1",id:"EUR",name:"Euro",linkedTo:"EURc",data:e}),document.getElementById("toggleEUR").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==B&&(B=1,e.show(),f(t),E())},1)});var D=0;$("#toggleUSH").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(D>0)var e=k.get("USH"),t=k.get("USHc");if(org1=minYear,1==D&&T>1)return D=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==D&&(document.getElementById("toggleUSH").checked=!1,$.getJSON("data/ushome.json",function(e){T+=1,u(),D=1,k.addSeries({data:[],name:"US Home Real Estate",id:"USHc",type:"scatter",color:"#9a0eea",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#9a0eea",id:"USH",name:"US Home Real Estate",linkedTo:"USHc",data:e}),document.getElementById("toggleUSH").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==D&&(D=1,e.show(),f(t),E())},1)});var Y=0;$("#toggleUS10CH").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(Y>0)var e=k.get("US10CH"),t=k.get("US10CHc");if(org1=minYear,1==Y&&T>1)return Y=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==Y&&(document.getElementById("toggleUS10CH").checked=!1,$.getJSON("data/us10chome.json",function(e){T+=1,u(),Y=1,k.addSeries({data:[],name:"US 10-City Home Real Estate",id:"US10CHc",type:"scatter",color:"#653700",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#653700",id:"US10CH",name:"US 10-City Home Real Estate",linkedTo:"US10CHc",data:e}),document.getElementById("toggleUS10CH").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==Y&&(Y=1,e.show(),f(t),E())},1)});var w=0;$("#toggleWorld").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(w>0)var e=k.get("World"),t=k.get("Worldc");if(org1=minYear,1==w&&T>1)return w=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==w&&(document.getElementById("toggleWorld").checked=!1,$.getJSON("data/halworld.json",function(e){T+=1,u(),w=1,k.addSeries({data:[],name:"hal World",id:"Worldc",type:"scatter",color:"#e50000",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#e50000",id:"World",name:"hal World",linkedTo:"Worldc",data:e}),document.getElementById("toggleWorld").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==w&&(w=1,e.show(),f(t),E())},1)});var N=0;$("#toggleChina").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(N>0)var e=k.get("LA"),t=k.get("LAc");if(org1=minYear,1==N&&T>1)return N=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==N&&(document.getElementById("toggleChina").checked=!1,$.getJSON("data/chinastocks.json",function(e){T+=1,u(),N=1,k.addSeries({data:[],name:"China Stocks",id:"LAc",type:"scatter",color:"#e50000",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#e50000",id:"LA",name:"China Stocks",linkedTo:"LAc",data:e}),document.getElementById("toggleChina").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==N&&(N=1,e.show(),f(t),E())},1)});var A=0;$("#toggleESC").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(A>0)var e=k.get("ESC"),t=k.get("ESCc");if(org1=minYear,1==A&&T>1)return A=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==A&&(document.getElementById("toggleESC").checked=!1,$.getJSON("data/europesc.json",function(e){T+=1,u(),A=1,k.addSeries({data:[],name:"Europe Small Cap Stocks",id:"ESCc",type:"scatter",color:"#011288",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#011288",id:"ESC",name:"Europe Small Cap Stocks",linkedTo:"ESCc",data:e}),document.getElementById("toggleESC").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==A&&(A=1,e.show(),f(t),E())},1)});var O=0;$("#toggleUSSC").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(O>0)var e=k.get("USSC"),t=k.get("USSCc");if(org1=minYear,1==O&&T>1)return O=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==O&&(document.getElementById("toggleUSSC").checked=!1,$.getJSON("data/usasc.json",function(e){T+=1,u(),O=1,k.addSeries({data:[],name:"USA Small Cap Stocks",id:"USSCc",type:"scatter",color:"#D35400",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#D35400",id:"USSC",name:"USA Small Cap Stocks",linkedTo:"USSCc",data:e}),document.getElementById("toggleUSSC").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==O&&(O=1,e.show(),f(t),E())},1)});var J=0;$("#toggleEurope").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(J>0)var e=k.get("Europe"),t=k.get("Europec");if(org1=minYear,1==J&&T>1)return J=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==J&&(document.getElementById("toggleEurope").checked=!1,$.getJSON("data/europestocks.json",function(e){T+=1,u(),J=1,k.addSeries({data:[],name:"Europe Stocks",id:"Europec",type:"scatter",color:"#029386",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#029386",id:"Europe",name:"Europe Stocks",linkedTo:"Europec",data:e}),document.getElementById("toggleEurope").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==J&&(J=1,e.show(),f(t),E())},1)});var W=0;$("#toggleEM").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(W>0)var e=k.get("EM"),t=k.get("EMc");if(org1=minYear,1==W&&T>1)return W=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==W&&(document.getElementById("toggleEM").checked=!1,$.getJSON("data/emstocks.json",function(e){T+=1,u(),W=1,k.addSeries({data:[],name:"Emerging Markets Stocks",id:"EMc",type:"scatter",color:"#8f1402",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#8f1402",id:"EM",name:"Emerging Markets Stocks",linkedTo:"EMc",data:e}),document.getElementById("toggleEM").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==W&&(W=1,e.show(),f(t),E())},1)});var j=0;$("#toggleJapan").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(j>0)var e=k.get("Japan"),t=k.get("Japanc");if(org1=minYear,1==j&&T>1)return j=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==j&&(document.getElementById("toggleJapan").checked=!1,$.getJSON("data/japanstocks.json",function(e){T+=1,u(),j=1,k.addSeries({data:[],name:"Japan Stocks",id:"Japanc",type:"scatter",color:"#ff028d",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#ff028d",id:"Japan",name:"Japan Stocks",linkedTo:"Japanc",data:e}),document.getElementById("toggleJapan").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==j&&(j=1,e.show(),f(t),E())},1)});var H=0;$("#toggleWM").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(H>0)var e=k.get("WM"),t=k.get("WMc");if(org1=minYear,1==H&&T>1)return H=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==H&&(document.getElementById("toggleWM").checked=!1,$.getJSON("data/halwm.json",function(e){T+=1,u(),H=1,k.addSeries({data:[],name:"hal World Momentum",id:"WMc",type:"scatter",color:"#9a0eea",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#9a0eea",id:"WM",name:"hal World Momentum",linkedTo:"WMc",data:e}),document.getElementById("toggleWM").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==H&&(H=1,e.show(),f(t),E())},1)});var G=0;$("#toggleGRE").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(G>0)var e=k.get("EMAsia"),t=k.get("EMAsiac");if(org1=minYear,1==G&&T>1)return G=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==G&&(document.getElementById("toggleGRE").checked=!1,$.getJSON("data/globalrealestate.json",function(e){T+=1,u(),G=1,k.addSeries({data:[],name:"Global Real Estate",id:"EMAsiac",type:"scatter",color:"#5a7d9a",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#5a7d9a",id:"EMAsia",name:"Global Real Estate",linkedTo:"EMAsiac",data:e}),document.getElementById("toggleGRE").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==G&&(G=1,e.show(),f(t),E())},1)});var L=0;$("#toggleWSC").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(L>0)var e=k.get("WSC"),t=k.get("WSCc");if(org1=minYear,1==L&&T>1)return L=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==L&&(document.getElementById("toggleWSC").checked=!1,$.getJSON("data/halwsc.json",function(e){T+=1,u(),L=1,k.addSeries({data:[],name:"World Small Cap Stocks",id:"WSCc",type:"scatter",color:"#06c2ac",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#06c2ac",id:"WSC",name:"World Small Cap Stocks",linkedTo:"WSCc",data:e}),document.getElementById("toggleWSC").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==L&&(L=1,e.show(),f(t),E())},1)});var R=0;$("#toggleUSA").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(R>0)var e=k.get("USA"),t=k.get("USAc");if(org1=minYear,1==R&&T>1)return R=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==R&&(document.getElementById("toggleUSA").checked=!1,$.getJSON("data/usastocks.json",function(e){T+=1,u(),R=1,k.addSeries({data:[],name:"USA Stocks",id:"USAc",type:"scatter",color:"#7e1e9c",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#7e1e9c",id:"USA",name:"USA Stocks",linkedTo:"USAc",data:e}),document.getElementById("toggleUSA").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==R&&(R=1,e.show(),f(t),E())},1)});var F=0;$("#toggleEMSC").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(F>0)var e=k.get("EMSC"),t=k.get("EMSCc");if(org1=minYear,1==F&&T>1)return F=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==F&&(document.getElementById("toggleEMSC").checked=!1,$.getJSON("data/emsc.json",function(e){T+=1,u(),F=1,k.addSeries({data:[],name:"Emerging Markets Small Cap Stocks",id:"EMSCc",type:"scatter",color:"#06470c",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#06470c",id:"EMSC",name:"Emerging Markets Small Cap Stocks",linkedTo:"EMSCc",data:e}),document.getElementById("toggleEMSC").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==F&&(F=1,e.show(),f(t),E())},1)}),$.ajaxSetup({async:!1});var P=0;$("#toggleCNY").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(P>0)var e=k.get("CNY"),t=k.get("CNYc");if(org1=minYear,1==P&&T>1)return P=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==P&&(document.getElementById("toggleCNY").checked=!1,$.getJSON("data/renminbi.json",function(e){T+=1,u(),P=1,k.addSeries({data:[],name:"Renminbi",id:"CNYc",type:"scatter",color:"#ff000d",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#ff000d",id:"CNY",name:"Renminbi",linkedTo:"CNYc",data:e}),document.getElementById("toggleCNY").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==P&&(P=1,e.show(),f(t),E())},1)});var z=0;$("#toggleBTC").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(z>0)var e=k.get("BTC"),t=k.get("BTCc");if(org1=minYear,1==z&&T>1)return z=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==z&&(document.getElementById("toggleBTC").checked=!1,$.getJSON("data/bitcoin.json",function(e){T+=1,u(),z=1,k.addSeries({data:[],name:"Bitcoin",id:"BTCc",type:"scatter",color:"#f97306",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#f97306",id:"BTC",name:"Bitcoin",linkedTo:"BTCc",data:e}),document.getElementById("toggleBTC").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==z&&(z=1,e.show(),f(t),E())},1)})})})})}),Highcharts.chart("container2",{chart:{plotBackgroundColor:null,plotBorderWidth:null,plotShadow:!1,type:"pie"},title:{text:"Global Asset Portfolio in July 2018",style:{color:"#222222",fontSize:"16px"}},tooltip:{enabled:!1},credits:{enabled:!1},plotOptions:{pie:{startAngle:210,colors:["#607D8B","#c20078","#2C2416","#27AE60","#2980B9","#b59410"],allowPointSelect:!0,cursor:"pointer",dataLabels:{enabled:!0,formatter:function(){return'<span style="color:'+this.point.color+'">'+this.point.name+": "+this.point.y+"%</span>"},style:{fontSize:"14px",fontFamily:"'Lucida Grande', 'Lucida Sans Unicode', 'Verdana', 'Arial', 'Helvetica', sans-serif"}}}},series:[{name:"Assets",colorByPoint:!0,innerSize:'70%',data:[{name:"Real Estate",y:41.98},{name:"Bonds",y:17.33},{name:"Crude Oil",y:15.27},{name:"Currencies",y:14.98},{name:"Stocks",y:9.06},{name:"Gold",y:1.38}]}]});});
+</script>
+</head>
+<body>
+<div id="eris"></div>
+<div class="chart">
+<div id="selectrange">
+    <select id='ddMonth1'>
+    <option value='0'>Jan</option>
+    <option value='1'>Feb</option>
+    <option value='2'>Mar</option>
+    <option value='3'>Apr</option>
+    <option value='4'>May</option>
+    <option value='5'>Jun</option>
+    <option value='6'>Jul</option>
+    <option value='7'>Aug</option>
+    <option value='8'>Sep</option>
+    <option value='9'>Oct</option>
+    <option value='10'>Nov</option>
+    <option value='11'>Dec</option>
+    </select> 
+	<select id='ddYear1'></select> 
+	<span style="font-size:13px;padding-left:5px;padding-right:5px;"> to </span>
+	<select id='ddMonth2'>
+    <option value='0'>Jan</option>
+    <option value='1'>Feb</option>
+    <option value='2'>Mar</option>
+    <option value='3'>Apr</option>
+    <option value='4'>May</option>
+    <option value='5'>Jun</option>
+    <option value='6'>Jul</option>
+    <option value='7'>Aug</option>
+    <option value='8'>Sep</option>
+    <option value='9'>Oct</option>
+    <option value='10'>Nov</option>
+    <option value='11'>Dec</option>
+    </select>
+	<select id='ddYear2'></select> 
+</div>
+<div id="container" style="height: 600px; min-width: 310px;"></div>
+</div>
+
+<div class="wrapper">
+  
+  <div class="table">
+    
+    <div class="row header">
+      <div class="cell name">
+        Stock Index
+      </div>
+      <div class="cell" title="Annual Total Real Return">
+        Annual Return %
+      </div>
+      <div class="cell"title="1 Year Total Real Return">
+        <span style="white-space:nowrap">&emsp;&emsp;1</span> Year %
+      </div>
+	  <div class="cell" title="Market Value as Percentage of Global Asset Portfolio">
+        <span style="white-space:nowrap">&ensp;&emsp;Value </span>to GAP %
+      </div>
+	  <div class="cell">
+        <span style="white-space:nowrap">&ensp;&emsp;Maximum</span> Drawdown %
+      </div>
+	  <div class="cell" title="Time Passed Since Real All-Time High">
+        <span style="white-space:nowrap">&emsp;&emsp;Since</span> ATH
+      </div>
+	  <div class="cell" title="Percentage Above or Below 10-Month Smple Moving Average">
+        <span style="white-space:nowrap">&emsp;&emsp;10-Month</span> SMA %
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="cell name">
+        <input type="checkbox" id="toggleACWI" autocomplete="off" checked="checked"><label for="toggleACWI">All Country World</label>
+      </div>
+      <div class="cell" title="Since 1899">
+        <span class="gpct">5.08</span>
+      </div>
+      <div class="cell">
+        <span class="gpct">8.35</span>
+      </div>
+      <div class="cell" title="Market Cap: $52.35T, Holdings: 8909">
+        9.06
+      </div>
+	  <div class="cell" title="1913-1920">
+        <span class="rpct">−61.80</span>
+      </div>
+	  <div class="cell">
+        5 months
+      </div>
+	  <div class="cell">
+        <span class="rpct">-0.70</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
+      </div>
+    </div>
+    
+    <div class="row">
+	  <div class="cell name">
+        <input type="checkbox" id="toggleUSA" autocomplete="off"><label for="toggleUSA">USA</label>
+      </div>
+      <div class="cell" title="Since 1871">
+        <span class="gpct">6.86</span>
+      </div>
+      <div class="cell">
+        <span class="gpct">11.08</span>
+      </div>
+      <div class="cell" title="Market Cap: $24.24T, Holdings: 627">
+        4.19
+      </div>
+	  <div class="cell" title="1929–1932">
+        <span class="rpct">−77.00</span>
+      </div>
+	  <div class="cell">
+        5 months
+      </div>
+	  <div class="cell">
+         <span class="gpct">1.58</span> <img src="img/up.png" class="arrow" alt="Above" title="Above" style="width:16px;height:16px;">
+      </div>
+    </div>
+    
+    <div class="row">
+	  <div class="cell name">
+        <input type="checkbox" id="toggleEurope" autocomplete="off"><label for="toggleEurope">Europe</label>
+      </div>
+      <div class="cell" title="Since 1899">
+        <span class="gpct">4.19</span>
+      </div>
+      <div class="cell">
+        <span class="gpct">2.88</span>
+      </div>
+      <div class="cell" title="Market Cap: $9.08T, Holdings: 449">
+        1.57
+      </div>
+	  <div class="cell" title="1913-1920">
+        <span class="rpct">−71.31</span>
+      </div>
+	  <div class="cell">
+        5 months
+      </div>
+	  <div class="cell">
+        <span class="rpct">-3.28</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
+      </div>
+    </div>
+    
+    <div class="row">
+	  <div class="cell name">
+        <input type="checkbox" id="toggleEM" autocomplete="off"><label for="toggleEM">Emerging Markets</label>
+      </div>
+      <div class="cell" title="Since 1899">
+        <span class="gpct">4.18</span>
+      </div>
+      <div class="cell">
+        <span class="gpct">5.32</span>
+      </div>
+      <div class="cell" title="Market Cap: $5.24T, Holdings: 1138">
+        0.91
+      </div>
+	  <div class="cell" title="1944-1948">
+        <span class="rpct">−84.43</span>
+      </div>
+	  <div class="cell">
+        5 months
+      </div>
+	  <div class="cell">
+        <span class="rpct">-6.80</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
+      </div>
+    </div>
+	
+	<div class="row">
+	  <div class="cell name">
+        <input type="checkbox" id="toggleJapan" autocomplete="off"><label for="toggleJapan">Japan</label>
+      </div>
+      <div class="cell" title="Since 1899">
+        <span class="gpct">4.73</span>
+      </div>
+      <div class="cell">
+        <span class="gpct">7.55</span>
+      </div>
+      <div class="cell" title="Market Cap: $3.44T, Holdings: 322">
+        0.60
+      </div>
+	  <div class="cell" title="1937-1947">
+        <span class="rpct">−97.52</span>
+      </div>
+	  <div class="cell">
+        29 years
+      </div>
+	  <div class="cell">
+        <span class="rpct">-2.74</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
+      </div>
+    </div>
+	
+	<div class="row">
+	  <div class="cell name">
+        <input type="checkbox" id="toggleChina" autocomplete="off"><label for="toggleChina">China</label>
+      </div>
+      <div class="cell" title="Since 1992">
+        <span class="gpct">1.78</span>
+      </div>
+      <div class="cell">
+        <span class="gpct">21.42</span>
+      </div>
+      <div class="cell" title="Market Cap: $1.71T, Holdings: 447">
+        0.30
+      </div>
+	  <div class="cell" title="1936-1945">
+        <span class="rpct">−100.00</span>
+      </div>
+	  <div class="cell">
+        81 years
+      </div>
+	  <div class="cell">
+        <span class="rpct">-2.76</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
+      </div>
+    </div>
+	
+  </div>
+  
+  <div class="table">
+    
+    <div class="row header orange">
+      <div class="cell name">
+        Stock Index&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
+      </div>
+      <div class="cell" title="Annual Total Real Return">
+        Annual Return %
+      </div>
+      <div class="cell"title="1 Year Total Real Return">
+        <span style="white-space:nowrap">&emsp;&emsp;1</span> Year %
+      </div>
+	  <div class="cell" title="Market Value as Percentage of Global Asset Portfolio">
+        <span style="white-space:nowrap">&ensp;&emsp;Value </span>to GAP %
+      </div>
+	  <div class="cell">
+        <span style="white-space:nowrap">&ensp;&emsp;Maximum</span> Drawdown %
+      </div>
+	  <div class="cell" title="Time Passed Since Real All-Time High">
+        <span style="white-space:nowrap">&emsp;&emsp;Since</span> ATH
+      </div>
+	  <div class="cell" title="Percentage Above or Below 10-Month Smple Moving Average">
+        <span style="white-space:nowrap">&emsp;&emsp;10-Month</span> SMA %
+      </div>
+    </div>
+    
+	<div class="row">
+	  <div class="cell name">
+        <input type="checkbox" id="toggleUSSC" autocomplete="off"><label for="toggleUSSC">USA Small Cap</label>
+      </div>
+      <div class="cell" title="Since 1927">
+        <span class="gpct">8.27</span>
+      </div>
+      <div class="cell">
+        <span class="gpct">14.35</span>
+      </div>
+      <div class="cell" title="Market Cap: $3.65T, Holdings: 1810">
+        0.63
+      </div>
+	  <div class="cell" title="1929–1932">
+        <span class="rpct">−85.88</span>
+      </div>
+	  <div class="cell">
+        At ATH
+      </div>
+	  <div class="cell">
+        <span class="gpct">4.62</span> <img src="img/up.png" class="arrow" alt="Above" title="Above" style="width:16px;height:16px;">
+      </div>
+    </div>
+	
+	<div class="row">
+	  <div class="cell name">
+        <input type="checkbox" id="toggleESC" autocomplete="off"><label for="toggleESC">Europe Small Cap</label>
+      </div>
+       <div class="cell" title="Since 1974">
+        <span class="gpct">11.12</span>
+      </div>
+      <div class="cell">
+        <span class="gpct">9.44</span>
+      </div>
+      <div class="cell" title="Market Cap: $1.42T, Holdings: 1018">
+        0.25
+      </div>
+	  <div class="cell" title="2007–2009">
+        <span class="rpct">−68.19</span>
+      </div>
+	  <div class="cell">
+        5 months
+      </div>
+	  <div class="cell">
+        <span class="rpct">-1.54</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
+      </div>
+    </div>
+	
+	<div class="row">
+	  <div class="cell name" title="Emerging Markets Small Cap">
+        <input type="checkbox" id="toggleEMSC" autocomplete="off"><label for="toggleEMSC">EM Small Cap</label>
+      </div>
+      <div class="cell" title="Since 1994">
+        <span class="gpct">2.85</span>
+      </div>
+      <div class="cell">
+        <span class="gpct">2.77</span>
+      </div>
+      <div class="cell" title="Market Cap: $0.69T, Holdings: 1738">
+        0.12
+      </div>
+	  <div class="cell" title="1994–2001">
+        <span class="rpct">−69.39</span>
+      </div>
+	  <div class="cell">
+        5 months
+      </div>
+	  <div class="cell">
+        <span class="rpct">-7.61</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
+      </div>
+    </div>
+	
+  </div>
+  
+  <div class="table">
+    
+    <div class="row header teal">
+      <div class="cell name" style="white-space:nowrap">
+        Asset&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+      </div>
+      <div class="cell" title="Annual Total Real Return" id="p1">
+        Annual Return %
+      </div>
+      <div class="cell"title="1 Year Total Real Return">
+        <span style="white-space:nowrap">&emsp;&emsp;1</span> Year %
+      </div>
+	  <div class="cell" title="Market Value as Percentage of Global Asset Portfolio">
+        <span style="white-space:nowrap">&ensp;&emsp;Value </span>to GAP %
+      </div>
+	  <div class="cell">
+        <span style="white-space:nowrap">&ensp;&emsp;Maximum</span> Drawdown %
+      </div>
+	  <div class="cell" title="Time Passed Since Real All-Time High">
+        <span style="white-space:nowrap">&emsp;&emsp;Since</span> ATH
+      </div>
+	  <div class="cell" title="Percentage Above or Below 10-Month Smple Moving Average">
+        <span style="white-space:nowrap">&emsp;&emsp;10-Month</span> SMA %
+      </div>
+    </div>
+	
+	<div class="row">
+      <div class="cell name">
+        <input type="checkbox" id="toggleGRE" autocomplete="off"><label for="toggleGBA">Global Real Estate</label>
+      </div>
+      <div class="cell" title="Since 1899">
+        <span class="gpct">1.38</span>
+      </div>
+      <div class="cell">
+        <span class="gpct">4.05</span>
+      </div>
+      <div class="cell" title="Market Value: $242.59T">
+        41.98
+      </div>
+      <div class="cell" title="1911–1918">
+        <span class="rpct">-47.93</span>
+      </div>
+	  <div class="cell">
+        At ATH
+      </div>
+	  <div class="cell">
+        <span class="gpct">1.47</span> <img src="img/up.png" class="arrow" alt="Above" title="Above" style="width:16px;height:16px;">
+      </div>
+    </div>
+	
+    <div class="row">
+      <div class="cell name">
+        <input type="checkbox" id="toggleGAB" autocomplete="off" checked="checked><label for="toggleGBA">Global Bonds</label>
+      </div>
+      <div class="cell" title="Since 1899">
+         <span class="gpct">1.74</span>
+      </div>
+      <div class="cell">
+         <span class="rpct">−1.69</span>
+      </div>
+      <div class="cell" title="Market Value: $100.13T">
+        17.33
+      </div>
+	  <div class="cell" title="1913-1920">
+         <span class="rpct">−69.58</span>
+      </div>
+	  <div class="cell">
+        6 years
+      </div>
+	  <div class="cell">
+        <span class="rpct">-2.40</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
+      </div>
+    </div>
+	
+	<div class="row">
+      <div class="cell name">
+        <input type="checkbox" id="toggleOil" autocomplete="off"><label for="toggleOil">Crude Oil</label>
+      </div>
+       <div class="cell" title="Since 1871">
+        <span class="rpct">−0.07</span>
+      </div>
+      <div class="cell">
+        <span class="gpct">60.25</span>
+      </div>
+      <div class="cell" title="Market Value: $88.22T">
+        15.27
+      </div>
+	  <div class="cell" title="1871–1931">
+        <span class="rpct">−88.26</span>
+      </div>
+	  <div class="cell">
+        10 years
+      </div>
+	  <div class="cell">
+        <span class="gpct">14.32</span> <img src="img/up.png" class="arrow" alt="Above" title="Above" style="width:16px;height:16px;">
+      </div>
+    </div>
+
+	<div class="row">
+      <div class="cell name">
+        <input type="checkbox" id="toggleUSH" autocomplete="off"><label for="toggleUSH">US Real Estate</label> 
+      </div>
+      <div class="cell" title="Since 1890">
+        <span class="gpct">0.41</span>
+      </div>
+      <div class="cell">
+        <span class="gpct">4.07</span>
+      </div>
+      <div class="cell" title="Market Value: $31.85T">
+        5.51
+      </div>
+	  <div class="cell" title="1894–1924">
+        <span class="rpct">−47.07</span>
+      </div>
+	  <div class="cell">
+        12 years
+      </div>
+	  <div class="cell">
+        <span class="gpct">0.59</span> <img src="img/up.png" class="arrow" alt="Above" title="Above" style="width:16px;height:16px;">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="cell name" title="US Government Bonds">
+        <input type="checkbox" id="toggleUSGB" autocomplete="off""><label for="toggleUSGB">USG Bonds</label>
+      </div>
+      <div class="cell" title="Since 1871">
+        <span class="gpct">2.57</span>
+      </div>
+      <div class="cell">
+        <span class="rpct">−4.74</span>
+      </div>
+      <div class="cell" title="Market Value: $17.57T">
+        3.04
+      </div>
+	  <div class="cell" title="1941-1980">
+        <span class="rpct">−60.28</span>
+      </div>
+	  <div class="cell">
+        1 year
+      </div>
+	  <div class="cell">
+        <span class="rpct">-1.82</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
+      </div>
+    </div>
+	
+	<div class="row">
+      <div class="cell name">
+        <input type="checkbox" id="toggleGold" autocomplete="off" checked="checked"><label for="toggleGold">Gold</label>
+      </div>
+       <div class="cell" title="Since 1871">
+        <span class="gpct">0.80</span>
+      </div>
+      <div class="cell">
+        <span class="rpct">−2.14</span>
+      </div>
+      <div class="cell" title="Market Value: $8.00T">
+        1.38
+      </div>
+	  <div class="cell" title="1980–2001">
+        <span class="rpct">−83.00</span>
+      </div>
+	  <div class="cell">
+        38 years
+      </div>
+	  <div class="cell">
+        <span class="rpct">-4.69</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
+      </div>
+    </div>
+	
+  </div>
+  
+  <div class="table">
+    
+    <div class="row header violet">
+      <div class="cell name" style="white-space:nowrap">
+        Currency&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
+      </div>
+      <div class="cell" title="Annual Total Real Return" id="p2">
+        Annual Return %
+      </div>
+      <div class="cell"title="1 Year Total Real Return">
+        <span style="white-space:nowrap">&emsp;&emsp;1</span> Year %
+      </div>
+	  <div class="cell" title="M2 Money Supply Value as Percentage of Global Asset Portfolio">
+        <span style="white-space:nowrap">&ensp;&emsp;Value </span>to GAP %
+      </div>
+	  <div class="cell">
+        <span style="white-space:nowrap">&ensp;&emsp;Maximum</span> Drawdown %
+      </div>
+	  <div class="cell" title="Time Passed Since Real All-Time High">
+        <span style="white-space:nowrap">&emsp;&emsp;Since</span> ATH
+      </div>
+	  <div class="cell" title="Percentage Above or Below 10-Month Smple Moving Average">
+        <span style="white-space:nowrap">&emsp;&emsp;10-Month</span> SMA %
+      </div>
+    </div>
+	
+	<div class="row">
+      <div class="cell name">
+        <input type="checkbox" id="toggleCNY" autocomplete="off"><label for="toggleCNY">Renminbi</label>
+      </div>
+       <div class="cell" title="Since 1960">
+        <span class="rpct">−5.23</span>
+      </div>
+      <div class="cell">
+        <span class="rpct">-0.22</span>
+      </div>
+      <div class="cell" title="M2 Money Supply Value: $26.18T">
+        4.53
+      </div>
+	  <div class="cell" title="1960–2017">
+        <span class="rpct">−95.72</span>
+      </div>
+	  <div class="cell">
+        58 years
+      </div>
+	  <div class="cell">
+        <span class="rpct">-3.73</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
+      </div>
+    </div>
+   
+	<div class="row">
+      <div class="cell name">
+        <input type="checkbox" id="toggleUSD" autocomplete="off" checked="checked"><label for="toggleUSD">US Dollar</label>
+      </div>
+      <div class="cell" title="Since 1871">
+        <span class="rpct">−2.02</span>
+      </div>
+      <div class="cell">
+        <span class="rpct">−3.01</span>
+      </div>
+      <div class="cell" title="M2 Money Supply Value: $14.11T">
+        2.44
+      </div>
+	  <div class="cell" title="1897–2018">
+        <span class="rpct">−97.51</span>
+      </div>
+	  <div class="cell">
+        120 years
+      </div>
+	  <div class="cell">
+        <span class="rpct">-1.22</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
+      </div>
+    </div>
+
+	<div class="row">
+      <div class="cell name">
+        <input type="checkbox" id="toggleEUR" autocomplete="off"><label for="toggleEUR">Euro</label>
+      </div>
+       <div class="cell" title="Since 1999">
+        <span class="rpct">−2.15</span>
+      </div>
+      <div class="cell">
+        <span class="rpct">-0.91</span>
+      </div>
+       <div class="cell" title="M2 Money Supply Value: $13.44T">
+        2.33
+      </div>
+	  <div class="cell" title="2008–2016">
+        <span class="rpct">−40.53</span>
+      </div>
+	  <div class="cell">
+        10 years
+      </div>
+	  <div class="cell">
+        <span class="rpct">-3.81</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
+      </div>
+    </div>
+    
+	<div class="row">
+      <div class="cell name">
+        <input type="checkbox" id="toggleBTC" autocomplete="off"><label for="toggleBTC">Bitcoin</label>
+      </div>
+       <div class="cell" title="Since 2010">
+        <span class="gpct">314.42</span>
+      </div>
+      <div class="cell">
+        <span class="gpct">134.91</span>
+      </div>
+       <div class="cell" title="Market Value: $0.13T">
+        0.02
+      </div>
+      <div class="cell" title="2011">
+        <span class="rpct">−81.59</span>
+      </div>
+	  <div class="cell">
+        6 months
+      </div>
+	  <div class="cell">
+        <span class="rpct">-28.10</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
+      </div>
+    </div>
+    
+  </div>
+  
+  <div class="table">
+    
+    <div class="row header purple">
+      <div class="cell name">
+        Region
+      </div>
+	  <div class="cell">
+        Unemployment Rate %
+      </div>
+      <div class="cell">
+        Average Unemployment Rate %
+      </div>
+	  <div class="cell" title="Percentage Above or Below Inverted Unemployment 12-Month Smple Moving Average">
+        Inverted UE 12-Month SMA %
+      </div>
+    </div>
+    
+	<div class="row">
+      <div class="cell name">
+        USA
+      </div>
+	  <div class="cell">
+        4.00
+      </div>
+      <div class="cell" title="since 1948">
+        5.78
+      </div>
+      <div class="cell">
+        <span class="gpct">2.43</span> <img src="img/up.png" class="arrow" alt="Above" title="Above" style="width:16px;height:16px;">
+      </div>
+    </div>
+    
+	<div class="row">
+      <div class="cell name">
+        Eurozone
+      </div>
+	  <div class="cell">
+        8.40
+      </div>
+      <div class="cell" title="since 1995">
+        9.74
+      </div>
+      <div class="cell">
+        <span class="gpct">3.63</span> <img src="img/up.png" class="arrow" alt="Above" title="Above" style="width:16px;height:16px;">
+      </div>
+    </div>
+	
+	<div class="row">
+      <div class="cell name">
+        Japan
+      </div>
+	  <div class="cell">
+        2.20
+      </div>
+      <div class="cell" title="since 1953">
+        2.73
+      </div>
+      <div class="cell">
+        <span class="gpct">16.19</span> <img src="img/up.png" class="arrow" alt="Above" title="Above" style="width:16px;height:16px;">
+      </div>
+    </div>
+	
+  </div>
+  
+<div id="container2" style="height: 400px; min-width: 310px;"></div>
+
+<a id="togglesources" href="#toggle_sources" onClick="return false;">Sources and notes</a><span id="mark"> | </span><a id="toggleoptions" href="#toggle_options" onClick="return false;">Chart options</a>
+
+<div id="options" style="line-height: 35px">
+<span style="white-space:nowrap"><input type="checkbox" id="log" autocomplete="off" checked="checked"><label for="log">Log scale</label></span>
+<span style="white-space:nowrap"><input type="checkbox" id="bars" autocomplete="off" checked="checked"><label for="bars">US recessions</label></span>
+<form id="heightForm" style="margin-right:30px">
+  <input class="pure-button" type="submit" value="Chart height">
+  <input type="text" name="fname" id ="userheight" autocomplete="off" size="5" value="600">
+</form>
+<form id="labelForm">
+  <input class="pure-button" type="submit" value="Label interval">
+  <input type="text" name="fname2" id ="labelticks" autocomplete="off" size="5" value="36">
+</form>
+</div>
+
+<div id="sources">
+<ul>
+<li><a href="http://www.econ.yale.edu/~shiller/data.htm">Robert Shiller</a></li>
+<li><a href="http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html">Fama/French</a></li>
+<li><a href="https://web.stanford.edu/~wfsharpe/rets/iia.htm">IIA</a></li>
+<li><a href="https://www.bis.org/statistics/secstats.htm">Bank for International Settlements</a></li>
+<li><a href="http://www.opec.org/opec_web/en/publications/202.htm">OPEC</a></li>
+<li><a href="https://www.bp.com/en/global/corporate/energy-economics/statistical-review-of-world-energy.html">BP</a></li>
+<li><a href="http://financial-risk-solutions.thomsonreuters.info/GFMS">GFMS</a></li>
+<li><a href="https://minerals.usgs.gov/minerals/pubs/commodity/gold/">United States Geological Survey</a></li>
+<li><a href="https://www.bundesbank.de/Navigation/EN/Statistics/Time_series_databases/Macro_economic_time_series/its_list_node.html?listId=www_s331_b01015_2">Bundesbank</a></li>
+<li><a href="https://www.hsbc.com.hk/content/dam/hsbc/hk/docs/premier/global-real-estate-report-en.pdf">Savills, HSBC</a></li>
+<li><a href="https://www.zillow.com/research/total-value-homes-31-8-trillion-17763/">Zillow</a></li>
+<li><a href="https://www.cia.gov/library/publications/the-world-factbook/geos/xx.html">CIA</a></li>
+<li><a href="https://www.coindesk.com/price/">CoinDesk</a></li>
+<li><a href="https://fred.stlouisfed.org">Federal Reserve</a></li>
+</ul>
+Unit of account: inflation-adjusted US dollar.<br>Nominal prices are used to calculate market values. GAP = Global Asset Portfolio, ATH = All-Time High, SMA = Simple Moving Average.<br>Estimates: 1492 billion barrels of oil reserves, 20$ per barrel of oil production cost, 244200 metric tonnes of gold above and below ground, 1000$ per ounce of gold production cost and a supply of 20999999.9769 bitcoins.</div>
+</div>
+</body>
+</html>
