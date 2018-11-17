@@ -11,7 +11,7 @@
 <script src="jquery-3.1.1.min.js"></script>
 <script src="highstock.js"></script>
 <script type="text/javascript">
-$(function(){var e=[{color:"#E6E6E6",from:Date.UTC(1873,9),to:Date.UTC(1879,2)},{color:"#E6E6E6",from:Date.UTC(1882,2),to:Date.UTC(1885,4)},{color:"#E6E6E6",from:Date.UTC(1887,2),to:Date.UTC(1888,3)},{color:"#E6E6E6",from:Date.UTC(1890,6),to:Date.UTC(1891,4)},{color:"#E6E6E6",from:Date.UTC(1892,12),to:Date.UTC(1894,5)},{color:"#E6E6E6",from:Date.UTC(1895,11),to:Date.UTC(1897,5)},{color:"#E6E6E6",from:Date.UTC(1899,5),to:Date.UTC(1900,11)},{color:"#E6E6E6",from:Date.UTC(1902,8),to:Date.UTC(1904,7)},{color:"#E6E6E6",from:Date.UTC(1907,4),to:Date.UTC(1908,5)},{color:"#E6E6E6",from:Date.UTC(1909,12),to:Date.UTC(1911,12)},{color:"#E6E6E6",from:Date.UTC(1912,12),to:Date.UTC(1914,11)},{color:"#E6E6E6",from:Date.UTC(1918,7),to:Date.UTC(1919,2)},{color:"#E6E6E6",from:Date.UTC(1919,12),to:Date.UTC(1921,6)},{color:"#E6E6E6",from:Date.UTC(1923,4),to:Date.UTC(1924,6)},{color:"#E6E6E6",from:Date.UTC(1926,9),to:Date.UTC(1927,10)},{color:"#E6E6E6",from:Date.UTC(1929,7),to:Date.UTC(1933,2)},{color:"#E6E6E6",from:Date.UTC(1937,4),to:Date.UTC(1938,5)},{color:"#E6E6E6",from:Date.UTC(1945,1),to:Date.UTC(1945,9)},{color:"#E6E6E6",from:Date.UTC(1948,10),to:Date.UTC(1949,9)},{color:"#E6E6E6",from:Date.UTC(1953,6),to:Date.UTC(1954,4)},{color:"#E6E6E6",from:Date.UTC(1957,7),to:Date.UTC(1958,3)},{color:"#E6E6E6",from:Date.UTC(1960,3),to:Date.UTC(1961,2)},{color:"#E6E6E6",from:Date.UTC(1969,11),to:Date.UTC(1970,10)},{color:"#E6E6E6",from:Date.UTC(1973,10),to:Date.UTC(1975,2)},{color:"#E6E6E6",from:Date.UTC(1979,12),to:Date.UTC(1980,6)},{color:"#E6E6E6",from:Date.UTC(1981,6),to:Date.UTC(1982,10)},{color:"#E6E6E6",from:Date.UTC(1990,6),to:Date.UTC(1991,2)},{color:"#E6E6E6",from:Date.UTC(2001,2),to:Date.UTC(2001,10)},{color:"#E6E6E6",from:Date.UTC(2007,11),to:Date.UTC(2009,5)}];$.getJSON("data/globalstocks.json",function(t){$.getJSON("data/gold.json",function(a){$.getJSON("data/usd.json",function(o){$.getJSON("data/globalbonds.json",function(i){function r(){$(window).width()<660?($("#selectrange").hide(),$("#container2").hide(),$("#eris").hide(),k.update({title:{x:0},rangeSelector:{buttonPosition:{x:0}}})):($("#selectrange").show(),$("#container2").show(),$("#eris").show(),k.update({title:{align:"left",x:27},rangeSelector:{buttonPosition:{x:27}}}))}function c(){extremes=k.xAxis[0].getExtremes(),minYear=new Date(extremes.dataMin),minMonth=minYear.getUTCMonth(),minYear=minYear.getUTCFullYear(),maxYear=new Date(extremes.dataMax),maxYear=maxYear.getUTCFullYear(),chartDate1=new Date(extremes.min),chartDate2=new Date(extremes.max),chartMonth1=chartDate1.getUTCMonth(),chartYear1=chartDate1.getUTCFullYear(),chartMonth2=chartDate2.getUTCMonth(),chartYear2=chartDate2.getUTCFullYear()}function n(){document.getElementById("ddMonth1").value=chartMonth1,document.getElementById("ddYear1").value=chartYear1,document.getElementById("ddMonth2").value=chartMonth2,document.getElementById("ddYear2").value=chartYear2}function d(e){var t;for(t=e.options.length-1;t>=0;t--)e.remove(t)}function l(e,t,a){if(!e)return!1;d(document.getElementById(e));var t=t||0,a=a||t+100;select=document.getElementById(e);for(var o=a;o>=t;o--){var i=document.createElement("option");i.value=o,i.innerHTML=o,select.appendChild(i)}}function s(e,t){document.getElementById(e).value=t}function g(){halfheight=$(window).height(),halfheight=Math.floor(.64*halfheight),halfheight<400&&(halfheight=400),/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)&&(halfheight=400),halfheight>2e3&&(halfheight=600),s("userheight",halfheight),divcontainer=document.getElementById("container"),divcontainer.style.height=halfheight+"px",k.setSize(void 0,halfheight)}function h(){userheight=document.getElementById("userheight").value,divcontainer=document.getElementById("container"),1==isNaN(userheight)&&(userheight=$(window).height(),userheight=Math.floor(.64*userheight),s("userheight",userheight)),userheight<300&&(userheight=300,s("userheight",userheight)),divcontainer.style.height=userheight+"px",k.setSize(void 0,userheight)}function m(){k.get("ACWI").visible?k.update({navigator:{series:{id:"navigat",data:t}}}):k.get("GAB").visible?k.update({navigator:{series:{id:"navigat",data:i}}}):k.get("Gold").visible?k.update({navigator:{series:{id:"navigat",data:a}}}):k.get("USD").visible?k.update({navigator:{series:{id:"navigat",data:o}}}):M>0&&k.get("Oil").visible?$.getJSON("data/oil.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):D>0&&k.get("USH").visible?$.getJSON("data/ushome.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):O>0&&k.get("USSC").visible?$.getJSON("data/usasc.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):w>0&&k.get("World").visible?$.getJSON("data/halworld.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):J>0&&k.get("Europe").visible?$.getJSON("data/europestocks.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):j>0&&k.get("Japan").visible?$.getJSON("data/japanstocks.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):Y>0&&k.get("US10CH").visible?$.getJSON("data/us10chome.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):W>0&&k.get("EM").visible?$.getJSON("data/emstocks.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):G>0&&k.get("EMAsia").visible?$.getJSON("data/globalrealestate.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):N>0&&k.get("LA").visible?$.getJSON("data/chinastocks.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):I>0&&k.get("USGB").visible?$.getJSON("data/usgovbond.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):R>0&&k.get("USA").visible?$.getJSON("data/usastocks.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):F>0&&k.get("EMSC").visible?$.getJSON("data/emsc.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):H>0&&k.get("WM").visible?$.getJSON("data/halwm.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):B>0&&k.get("EUR").visible?$.getJSON("data/euro.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):L>0&&k.get("WSC").visible?$.getJSON("data/halwsc.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):A>0&&k.get("ESC").visible?$.getJSON("data/halwsc.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):P>0&&k.get("CNY").visible?$.getJSON("data/renminbi.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):z>0&&k.get("BTC").visible&&$.getJSON("data/bitcoin.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})})}function u(){var e=function(){return this.id},t=$(":checkbox:checked").map(e).get(),a=$(":checkbox:disabled").map(e).get(),/*t=t[t.length-1],*/a=a[a.length-1];1==T&&$("#"+t).prop("disabled",!0),T>1&&$("#"+a).prop("disabled",!1)}function p(){c(),extremes.userMin<=extremes.dataMin&&setTimeout(function(){k.update({rangeSelector:{selected:3}})},100)}function v(e,t){$(":checkbox").prop("disabled",!0),setTimeout(function(){e.visible?T>1&&(T-=1,e.hide(),b(t),m(),$(":checkbox").prop("disabled",!1),1==T&&u(),p()):(T+=1,e.show(),f(t),$(":checkbox").prop("disabled",!1),2==T&&u(),m(),c(),l("ddYear1",minYear,maxYear),l("ddYear2",minYear,maxYear),n())},1)}function b(e){e.options.showInLegend=!1,e.legendItem=null,k.legend.destroyItem(e),k.legend.render()}function f(e){e.options.showInLegend=!0,k.legend.renderItem(e),k.legend.render()}function S(e){c(),(e!==e||e>minYear)&&(l("ddYear1",minYear,maxYear),l("ddYear2",minYear,maxYear),n())}function E(){2==(T+=1)&&u(),m()}Highcharts.setOptions({lang:{rangeSelectorZoom:"",rangeSelectorFrom:"",rangeSelectorTo:"",thousandsSep:""}});var k=Highcharts.stockChart("container",{chart:{spacingBottom:17,zoomType:"x",marginRight:49,events:{load:function(e){}}},title:{align:"left",style:{color:"#222222"},text:"Historical Asset Class Returns",margin:7,y:10,x:27},legend:{y:6,enabled:!0,borderColor:"#D8D8D8",borderWidth:1,itemStyle:{fontSize:"14px",cursor:"default"},itemMarginTop:4,labelFormatter:function(){return'<span style="color:'+this.color+';">'+this.name+"</span>"}},plotOptions:{series:{events:{legendItemClick:function(e){event.preventDefault()}}}},rangeSelector:{allButtonsEnabled:!0,inputDateFormat:"%b %Y",inputEditDateFormat:"%b %Y",buttonPosition:{x:27},inputPosition:{y:-5},labelStyle:{y:50},inputBoxHeight:14,inputBoxWidth:70,inputStyle:{visibility:"hidden"},buttonTheme:{style:{color:"#222222"},height:15},buttons:[{type:"year",count:1,text:"1Y"},{type:"year",count:5,text:"5Y"},{type:"year",count:10,text:"10Y"},{type:"all",text:"Max"}]},xAxis:[{ordinal:!1,minRange:2,dateTimeLabelFormats:{month:"%b %Y"},events:{afterSetExtremes:function(){c(),n()}},labels:{style:{color:"#444444",fontSize:"12px"}},plotBands:e}],yAxis:[{tickPixelInterval:36,type:"logarithmic",gridLineColor:"#D8D8D8",lineWidth:1,plotLines:[{value:100,width:1,color:"#333333",zIndex:1}],labels:{align:"right",x:44,y:5,formatter:function(){return Number.prototype.countDecimals=function(){return Math.round(this.valueOf())===this.valueOf()?0:this.toString().split(".")[1].length||0},this.value=this.value-100,this.value.countDecimals()>1&&(this.value=this.value.toFixed(1)),this.value>=1e3&&this.value<1e4&&(this.value=this.value/1e3,1.9==this.value&&(this.value=2),2.9==this.value&&(this.value=3),3.9==this.value&&(this.value=4),4.9==this.value&&(this.value=5),5.9==this.value&&(this.value=6),6.9==this.value&&(this.value=7),7.9==this.value&&(this.value=8),8.9==this.value&&(this.value=9),9.9==this.value&&(this.value=10),this.value=this.value+"k"),this.value>=1e4&&this.value<1e6&&(this.value=this.value/1e3,this.value.countDecimals()>1&&(this.value=this.value.toFixed(1)),this.value=Math.round(this.value),99==this.value&&(this.value=100),1e3==this.value&&(this.value=1),1==this.value?this.value=this.value+"m":1!=this.value&&(this.value=this.value+"k")),this.value>=1e6&&this.value<99e5&&(this.value=this.value/1e6,this.value.countDecimals()>1&&(this.value=this.value.toFixed(1)),1==this.value&&(this.value=1),2==this.value&&(this.value=2),3==this.value&&(this.value=3),4==this.value&&(this.value=4),5==this.value&&(this.value=5),6==this.value&&(this.value=6),7==this.value&&(this.value=7),8==this.value&&(this.value=8),9==this.value&&(this.value=9),this.value=this.value+"m"),this.value>=99e5&&(this.value=this.value/1e6,this.value.countDecimals()>1&&(this.value=this.value.toFixed(1)),this.value=Math.round(this.value),this.value=this.value+"m"),this.value,this.value+"%"},style:{color:"#444444",fontSize:"12px"}}}],tooltip:{borderWidth:0,padding:0,shadow:!1,backgroundColor:"rgba(255,255,255,1)",xDateFormat:"%b %Y",shared:!0,useHTML:!0,valueDecimals:2,formatter:function(){return tooltip_html='<div style="text-align: center">'+Highcharts.dateFormat("%b %Y",this.x)+"</div>",tooltip_html+="<table>",this.points.forEach(function(e){tooltip_html+='<tr style="font-weight: bold; color:'+e.series.color+'"><td>● '+e.series.name+':</td><td style="text-align: right"> '+Highcharts.numberFormat(e.point.change-100,2)+"%</td></tr>"}),tooltip_html+="</table>",tooltip_html}},navigator:{height:25,margin:9,series:{id:"navigat",data:t}},credits:{enabled:!1},series:[{data:[],name:"Global Stocks",type:"scatter",id:"ACWIc",color:"#0343df",marker:{symbol:"circle"}},{compare:"percent",compareBase:100,showInNavigator:!1,name:"Global Stocks",id:"ACWI",data:t,color:"#0343df",tooltip:{valueDecimals:2},linkedTo:":previous"},{data:[],name:"Global Bonds",type:"scatter",id:"GABc",color:"#c20078",marker:{symbol:"circle"}},{compare:"percent",compareBase:100,showInNavigator:!1,name:"Global Bonds",id:"GAB",data:i,color:"#c20078",tooltip:{valueDecimals:2},linkedTo:":previous"},{data:[],name:"Gold",type:"scatter",id:"Goldc",color:"#b59410",marker:{symbol:"circle"}},{compare:"percent",compareBase:100,showInNavigator:!1,name:"Gold",id:"Gold",data:a,color:"#b59410",tooltip:{valueDecimals:2},linkedTo:":previous"},{data:[],name:"US Dollar",type:"scatter",id:"USDc",color:"#15b01a",marker:{symbol:"circle"}},{compare:"percent",compareBase:100,showInNavigator:!1,name:"US Dollar",id:"USD",data:o,color:"#15b01a",tooltip:{valueDecimals:2},linkedTo:":previous"}]});extremes=1,chartDate1=1,chartDate2=1,chartMonth1=1,chartYear1=1,chartMonth2=1,chartYear2=1,c(),l("ddYear1",minYear,maxYear),l("ddYear2",minYear,maxYear),n(),k.xAxis[0].setExtremes(Date.UTC(1899,11),Date.UTC(chartYear2,chartMonth2)),r(),g(),$("#togglesources").click(function(){$("#sources").toggle(),$("html, body").scrollTop($(document).height())}),$("#toggleoptions").click(function(){$("#options").toggle(),$("html, body").scrollTop($(document).height())}),logtype=1,document.getElementById("log").onchange=function(){return 1==logtype?($("#container").highcharts().yAxis[0].update({type:"linear"}),void(logtype=2)):2==logtype?($("#container").highcharts().yAxis[0].update({type:"logarithmic"}),void(logtype=1)):void 0},barstype=1,document.getElementById("bars").onchange=function(){return 1==barstype?($("#container").highcharts().xAxis[0].update({plotBands:[]}),void(barstype=2)):barstype>=2?($("#container").highcharts().xAxis[0].update({plotBands:e}),void(barstype=1)):void 0};var C=window.navigator.userAgent,y=C.indexOf("MSIE "),x=C.indexOf("Trident/"),U=C.indexOf("Edge/");(y>0||x>0||U>0)&&(document.getElementById("p2").innerHTML='<span style="white-space:nowrap">&emsp;&emsp;&emsp;&emsp;&ensp;Annual</span> Return %'),$("#heightForm").submit(function(){return h(),!1}),window.onresize=function(){r(),setTimeout(function(){g()},100)},$("#ddMonth1").change(function(e){c(),datevalue=parseInt($(this).val()),chartYear1==chartYear2&&datevalue>=chartMonth2&&(chartMonth2=datevalue+1),k.xAxis[0].setExtremes(Date.UTC(chartYear1,datevalue),Date.UTC(chartYear2,chartMonth2))}),$("#ddYear1").change(function(e){c(),datevalue=parseInt($(this).val()),datevalue>=chartYear2&&(chartYear2=datevalue,chartMonth1>=chartMonth2&&(chartMonth2=chartMonth1+1)),previousMonth=chartMonth1-1,k.xAxis[0].setExtremes(Date.UTC(datevalue,chartMonth1),Date.UTC(chartYear2,chartMonth2))}),$("#ddMonth2").change(function(e){c(),datevalue=parseInt($(this).val()),chartYear1==chartYear2&&datevalue<=chartMonth1&&(chartMonth1=datevalue-1),1871==chartYear2&&0==datevalue&&(chartYear1=1871,chartMonth1=0),k.xAxis[0].setExtremes(Date.UTC(chartYear1,chartMonth1),Date.UTC(chartYear2,datevalue))}),$("#ddYear2").change(function(e){c(),datevalue=parseInt($(this).val()),datevalue<=chartYear1&&(chartYear1=datevalue,chartMonth2<=chartMonth1&&(chartMonth1=chartMonth2-1)),1871==datevalue&&0==chartMonth2&&(chartYear1=1871,chartMonth1=0),k.xAxis[0].setExtremes(Date.UTC(chartYear1,chartMonth1),Date.UTC(datevalue,chartMonth2))}),$("#labelForm").submit(function(){return labelticks=document.getElementById("labelticks").value,1==isNaN(labelticks)&&(labelticks=36,s("labelticks",labelticks)),labelticks<1&&(labelticks=1,s("labelticks",labelticks)),$("#container").highcharts().yAxis[0].update({tickPixelInterval:labelticks}),!1});var T=4;$("#toggleACWI").click(function(){v(k.get("ACWI"),k.get("ACWIc"))}),$("#toggleGAB").click(function(){v(k.get("GAB"),k.get("GABc"))}),$("#toggleGold").click(function(){v(k.get("Gold"),k.get("Goldc"))}),$("#toggleUSD").click(function(){v(k.get("USD"),k.get("USDc"))});var I=0;$("#toggleUSGB").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(I>0)var e=k.get("USGB"),t=k.get("USGBc");if(org1=minYear,1==I&&T>1)return I=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==I&&(document.getElementById("toggleUSGB").checked=!1,$.getJSON("data/usgovbond.json",function(e){T+=1,u(),I=1,k.addSeries({data:[],name:"US Government Bonds",id:"USGBc",type:"scatter",color:"#653700",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#653700",id:"USGB",name:"US Government Bonds",linkedTo:"USGBc",data:e}),document.getElementById("toggleUSGB").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==I&&(I=1,e.show(),f(t),E())},1)});var M=0;$("#toggleOil").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(M>0)var e=k.get("Oil"),t=k.get("Oilc");if(org1=minYear,1==M&&T>1)return M=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==M&&(document.getElementById("toggleOil").checked=!1,$.getJSON("data/oil.json",function(e){T+=1,u(),M=1,k.addSeries({data:[],name:"Crude Oil",id:"Oilc",type:"scatter",color:"#2C2416",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#2C2416",id:"Oil",name:"Crude Oil",linkedTo:"Oilc",data:e}),document.getElementById("toggleOil").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==M&&(M=1,e.show(),f(t),E())},1)});var B=0;$("#toggleEUR").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(B>0)var e=k.get("EUR"),t=k.get("EURc");if(org1=minYear,1==B&&T>1)return B=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==B&&(document.getElementById("toggleEUR").checked=!1,$.getJSON("data/euro.json",function(e){T+=1,u(),B=1,k.addSeries({data:[],name:"Euro",id:"EURc",type:"scatter",color:"#0485d1",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#0485d1",id:"EUR",name:"Euro",linkedTo:"EURc",data:e}),document.getElementById("toggleEUR").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==B&&(B=1,e.show(),f(t),E())},1)});var D=0;$("#toggleUSH").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(D>0)var e=k.get("USH"),t=k.get("USHc");if(org1=minYear,1==D&&T>1)return D=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==D&&(document.getElementById("toggleUSH").checked=!1,$.getJSON("data/ushome.json",function(e){T+=1,u(),D=1,k.addSeries({data:[],name:"US Home Real Estate",id:"USHc",type:"scatter",color:"#9a0eea",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#9a0eea",id:"USH",name:"US Home Real Estate",linkedTo:"USHc",data:e}),document.getElementById("toggleUSH").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==D&&(D=1,e.show(),f(t),E())},1)});var Y=0;$("#toggleUS10CH").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(Y>0)var e=k.get("US10CH"),t=k.get("US10CHc");if(org1=minYear,1==Y&&T>1)return Y=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==Y&&(document.getElementById("toggleUS10CH").checked=!1,$.getJSON("data/us10chome.json",function(e){T+=1,u(),Y=1,k.addSeries({data:[],name:"US 10-City Home Real Estate",id:"US10CHc",type:"scatter",color:"#653700",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#653700",id:"US10CH",name:"US 10-City Home Real Estate",linkedTo:"US10CHc",data:e}),document.getElementById("toggleUS10CH").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==Y&&(Y=1,e.show(),f(t),E())},1)});var w=0;$("#toggleWorld").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(w>0)var e=k.get("World"),t=k.get("Worldc");if(org1=minYear,1==w&&T>1)return w=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==w&&(document.getElementById("toggleWorld").checked=!1,$.getJSON("data/halworld.json",function(e){T+=1,u(),w=1,k.addSeries({data:[],name:"hal World",id:"Worldc",type:"scatter",color:"#e50000",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#e50000",id:"World",name:"hal World",linkedTo:"Worldc",data:e}),document.getElementById("toggleWorld").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==w&&(w=1,e.show(),f(t),E())},1)});var N=0;$("#toggleChina").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(N>0)var e=k.get("LA"),t=k.get("LAc");if(org1=minYear,1==N&&T>1)return N=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==N&&(document.getElementById("toggleChina").checked=!1,$.getJSON("data/chinastocks.json",function(e){T+=1,u(),N=1,k.addSeries({data:[],name:"China Stocks",id:"LAc",type:"scatter",color:"#e50000",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#e50000",id:"LA",name:"China Stocks",linkedTo:"LAc",data:e}),document.getElementById("toggleChina").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==N&&(N=1,e.show(),f(t),E())},1)});var A=0;$("#toggleESC").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(A>0)var e=k.get("ESC"),t=k.get("ESCc");if(org1=minYear,1==A&&T>1)return A=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==A&&(document.getElementById("toggleESC").checked=!1,$.getJSON("data/europesc.json",function(e){T+=1,u(),A=1,k.addSeries({data:[],name:"Europe Small Cap Stocks",id:"ESCc",type:"scatter",color:"#011288",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#011288",id:"ESC",name:"Europe Small Cap Stocks",linkedTo:"ESCc",data:e}),document.getElementById("toggleESC").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==A&&(A=1,e.show(),f(t),E())},1)});var O=0;$("#toggleUSSC").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(O>0)var e=k.get("USSC"),t=k.get("USSCc");if(org1=minYear,1==O&&T>1)return O=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==O&&(document.getElementById("toggleUSSC").checked=!1,$.getJSON("data/usasc.json",function(e){T+=1,u(),O=1,k.addSeries({data:[],name:"USA Small Cap Stocks",id:"USSCc",type:"scatter",color:"#D35400",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#D35400",id:"USSC",name:"USA Small Cap Stocks",linkedTo:"USSCc",data:e}),document.getElementById("toggleUSSC").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==O&&(O=1,e.show(),f(t),E())},1)});var J=0;$("#toggleEurope").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(J>0)var e=k.get("Europe"),t=k.get("Europec");if(org1=minYear,1==J&&T>1)return J=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==J&&(document.getElementById("toggleEurope").checked=!1,$.getJSON("data/europestocks.json",function(e){T+=1,u(),J=1,k.addSeries({data:[],name:"Europe Stocks",id:"Europec",type:"scatter",color:"#029386",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#029386",id:"Europe",name:"Europe Stocks",linkedTo:"Europec",data:e}),document.getElementById("toggleEurope").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==J&&(J=1,e.show(),f(t),E())},1)});var W=0;$("#toggleEM").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(W>0)var e=k.get("EM"),t=k.get("EMc");if(org1=minYear,1==W&&T>1)return W=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==W&&(document.getElementById("toggleEM").checked=!1,$.getJSON("data/emstocks.json",function(e){T+=1,u(),W=1,k.addSeries({data:[],name:"Emerging Markets Stocks",id:"EMc",type:"scatter",color:"#8f1402",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#8f1402",id:"EM",name:"Emerging Markets Stocks",linkedTo:"EMc",data:e}),document.getElementById("toggleEM").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==W&&(W=1,e.show(),f(t),E())},1)});var j=0;$("#toggleJapan").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(j>0)var e=k.get("Japan"),t=k.get("Japanc");if(org1=minYear,1==j&&T>1)return j=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==j&&(document.getElementById("toggleJapan").checked=!1,$.getJSON("data/japanstocks.json",function(e){T+=1,u(),j=1,k.addSeries({data:[],name:"Japan Stocks",id:"Japanc",type:"scatter",color:"#ff028d",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#ff028d",id:"Japan",name:"Japan Stocks",linkedTo:"Japanc",data:e}),document.getElementById("toggleJapan").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==j&&(j=1,e.show(),f(t),E())},1)});var H=0;$("#toggleWM").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(H>0)var e=k.get("WM"),t=k.get("WMc");if(org1=minYear,1==H&&T>1)return H=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==H&&(document.getElementById("toggleWM").checked=!1,$.getJSON("data/halwm.json",function(e){T+=1,u(),H=1,k.addSeries({data:[],name:"hal World Momentum",id:"WMc",type:"scatter",color:"#9a0eea",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#9a0eea",id:"WM",name:"hal World Momentum",linkedTo:"WMc",data:e}),document.getElementById("toggleWM").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==H&&(H=1,e.show(),f(t),E())},1)});var G=0;$("#toggleGRE").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(G>0)var e=k.get("EMAsia"),t=k.get("EMAsiac");if(org1=minYear,1==G&&T>1)return G=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==G&&(document.getElementById("toggleGRE").checked=!1,$.getJSON("data/globalrealestate.json",function(e){T+=1,u(),G=1,k.addSeries({data:[],name:"Global Real Estate",id:"EMAsiac",type:"scatter",color:"#5a7d9a",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#5a7d9a",id:"EMAsia",name:"Global Real Estate",linkedTo:"EMAsiac",data:e}),document.getElementById("toggleGRE").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==G&&(G=1,e.show(),f(t),E())},1)});var L=0;$("#toggleWSC").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(L>0)var e=k.get("WSC"),t=k.get("WSCc");if(org1=minYear,1==L&&T>1)return L=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==L&&(document.getElementById("toggleWSC").checked=!1,$.getJSON("data/halwsc.json",function(e){T+=1,u(),L=1,k.addSeries({data:[],name:"World Small Cap Stocks",id:"WSCc",type:"scatter",color:"#06c2ac",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#06c2ac",id:"WSC",name:"World Small Cap Stocks",linkedTo:"WSCc",data:e}),document.getElementById("toggleWSC").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==L&&(L=1,e.show(),f(t),E())},1)});var R=0;$("#toggleUSA").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(R>0)var e=k.get("USA"),t=k.get("USAc");if(org1=minYear,1==R&&T>1)return R=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==R&&(document.getElementById("toggleUSA").checked=!1,$.getJSON("data/usastocks.json",function(e){T+=1,u(),R=1,k.addSeries({data:[],name:"USA Stocks",id:"USAc",type:"scatter",color:"#7e1e9c",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#7e1e9c",id:"USA",name:"USA Stocks",linkedTo:"USAc",data:e}),document.getElementById("toggleUSA").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==R&&(R=1,e.show(),f(t),E())},1)});var F=0;$("#toggleEMSC").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(F>0)var e=k.get("EMSC"),t=k.get("EMSCc");if(org1=minYear,1==F&&T>1)return F=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==F&&(document.getElementById("toggleEMSC").checked=!1,$.getJSON("data/emsc.json",function(e){T+=1,u(),F=1,k.addSeries({data:[],name:"Emerging Markets Small Cap Stocks",id:"EMSCc",type:"scatter",color:"#06470c",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#06470c",id:"EMSC",name:"Emerging Markets Small Cap Stocks",linkedTo:"EMSCc",data:e}),document.getElementById("toggleEMSC").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==F&&(F=1,e.show(),f(t),E())},1)}),$.ajaxSetup({async:!1});var P=0;$("#toggleCNY").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(P>0)var e=k.get("CNY"),t=k.get("CNYc");if(org1=minYear,1==P&&T>1)return P=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==P&&(document.getElementById("toggleCNY").checked=!1,$.getJSON("data/renminbi.json",function(e){T+=1,u(),P=1,k.addSeries({data:[],name:"Renminbi",id:"CNYc",type:"scatter",color:"#ff000d",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#ff000d",id:"CNY",name:"Renminbi",linkedTo:"CNYc",data:e}),document.getElementById("toggleCNY").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==P&&(P=1,e.show(),f(t),E())},1)});var z=0;$("#toggleBTC").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(z>0)var e=k.get("BTC"),t=k.get("BTCc");if(org1=minYear,1==z&&T>1)return z=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==z&&(document.getElementById("toggleBTC").checked=!1,$.getJSON("data/bitcoin.json",function(e){T+=1,u(),z=1,k.addSeries({data:[],name:"Bitcoin",id:"BTCc",type:"scatter",color:"#f97306",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#f97306",id:"BTC",name:"Bitcoin",linkedTo:"BTCc",data:e}),document.getElementById("toggleBTC").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==z&&(z=1,e.show(),f(t),E())},1)})})})})}),Highcharts.chart("container2",{chart:{plotBackgroundColor:null,plotBorderWidth:null,plotShadow:!1,type:"pie"},title:{text:"Global Asset Portfolio in September 2018",style:{color:"#222222",fontSize:"16px"}},tooltip:{enabled:!1},credits:{enabled:!1},plotOptions:{pie:{startAngle:211,colors:["#607D8B","#c20078","#27AE60","#2C2416","#2980B9","#b59410"],allowPointSelect:!0,cursor:"pointer",dataLabels:{enabled:!0,formatter:function(){return'<span style="color:'+this.point.color+'">'+this.point.name+": "+this.point.y.toFixed(2)+"%</span>"},style:{fontSize:"14px",fontFamily:"'Lucida Grande', 'Lucida Sans Unicode', 'Verdana', 'Arial', 'Helvetica', sans-serif"}}}},series:[{name:"Assets",colorByPoint:!0,innerSize:'70%',data:[{name:"Real Estate",y:41.87},{name:"Bonds",y:17.40},{name:"Currencies",y:15.07},{name:"Crude Oil",y:14.95},{name:"Stocks",y:9.40},{name:"Gold",y:1.31}]}]});});
+$(function(){var e=[{color:"#E6E6E6",from:Date.UTC(1873,9),to:Date.UTC(1879,2)},{color:"#E6E6E6",from:Date.UTC(1882,2),to:Date.UTC(1885,4)},{color:"#E6E6E6",from:Date.UTC(1887,2),to:Date.UTC(1888,3)},{color:"#E6E6E6",from:Date.UTC(1890,6),to:Date.UTC(1891,4)},{color:"#E6E6E6",from:Date.UTC(1892,12),to:Date.UTC(1894,5)},{color:"#E6E6E6",from:Date.UTC(1895,11),to:Date.UTC(1897,5)},{color:"#E6E6E6",from:Date.UTC(1899,5),to:Date.UTC(1900,11)},{color:"#E6E6E6",from:Date.UTC(1902,8),to:Date.UTC(1904,7)},{color:"#E6E6E6",from:Date.UTC(1907,4),to:Date.UTC(1908,5)},{color:"#E6E6E6",from:Date.UTC(1909,12),to:Date.UTC(1911,12)},{color:"#E6E6E6",from:Date.UTC(1912,12),to:Date.UTC(1914,11)},{color:"#E6E6E6",from:Date.UTC(1918,7),to:Date.UTC(1919,2)},{color:"#E6E6E6",from:Date.UTC(1919,12),to:Date.UTC(1921,6)},{color:"#E6E6E6",from:Date.UTC(1923,4),to:Date.UTC(1924,6)},{color:"#E6E6E6",from:Date.UTC(1926,9),to:Date.UTC(1927,10)},{color:"#E6E6E6",from:Date.UTC(1929,7),to:Date.UTC(1933,2)},{color:"#E6E6E6",from:Date.UTC(1937,4),to:Date.UTC(1938,5)},{color:"#E6E6E6",from:Date.UTC(1945,1),to:Date.UTC(1945,9)},{color:"#E6E6E6",from:Date.UTC(1948,10),to:Date.UTC(1949,9)},{color:"#E6E6E6",from:Date.UTC(1953,6),to:Date.UTC(1954,4)},{color:"#E6E6E6",from:Date.UTC(1957,7),to:Date.UTC(1958,3)},{color:"#E6E6E6",from:Date.UTC(1960,3),to:Date.UTC(1961,2)},{color:"#E6E6E6",from:Date.UTC(1969,11),to:Date.UTC(1970,10)},{color:"#E6E6E6",from:Date.UTC(1973,10),to:Date.UTC(1975,2)},{color:"#E6E6E6",from:Date.UTC(1979,12),to:Date.UTC(1980,6)},{color:"#E6E6E6",from:Date.UTC(1981,6),to:Date.UTC(1982,10)},{color:"#E6E6E6",from:Date.UTC(1990,6),to:Date.UTC(1991,2)},{color:"#E6E6E6",from:Date.UTC(2001,2),to:Date.UTC(2001,10)},{color:"#E6E6E6",from:Date.UTC(2007,11),to:Date.UTC(2009,5)}];$.getJSON("data/globalstocks.json",function(t){$.getJSON("data/gold.json",function(a){$.getJSON("data/usd.json",function(o){$.getJSON("data/globalbonds.json",function(i){function r(){$(window).width()<660?($("#selectrange").hide(),$("#container2").hide(),$("#eris").hide(),k.update({title:{x:0},rangeSelector:{buttonPosition:{x:0}}})):($("#selectrange").show(),$("#container2").show(),$("#eris").show(),k.update({title:{align:"left",x:27},rangeSelector:{buttonPosition:{x:27}}}))}function c(){extremes=k.xAxis[0].getExtremes(),minYear=new Date(extremes.dataMin),minMonth=minYear.getUTCMonth(),minYear=minYear.getUTCFullYear(),maxYear=new Date(extremes.dataMax),maxYear=maxYear.getUTCFullYear(),chartDate1=new Date(extremes.min),chartDate2=new Date(extremes.max),chartMonth1=chartDate1.getUTCMonth(),chartYear1=chartDate1.getUTCFullYear(),chartMonth2=chartDate2.getUTCMonth(),chartYear2=chartDate2.getUTCFullYear()}function n(){document.getElementById("ddMonth1").value=chartMonth1,document.getElementById("ddYear1").value=chartYear1,document.getElementById("ddMonth2").value=chartMonth2,document.getElementById("ddYear2").value=chartYear2}function d(e){var t;for(t=e.options.length-1;t>=0;t--)e.remove(t)}function l(e,t,a){if(!e)return!1;d(document.getElementById(e));var t=t||0,a=a||t+100;select=document.getElementById(e);for(var o=a;o>=t;o--){var i=document.createElement("option");i.value=o,i.innerHTML=o,select.appendChild(i)}}function s(e,t){document.getElementById(e).value=t}function g(){halfheight=$(window).height(),halfheight=Math.floor(.64*halfheight),halfheight<400&&(halfheight=400),/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)&&(halfheight=400),halfheight>2e3&&(halfheight=600),s("userheight",halfheight),divcontainer=document.getElementById("container"),divcontainer.style.height=halfheight+"px",k.setSize(void 0,halfheight)}function h(){userheight=document.getElementById("userheight").value,divcontainer=document.getElementById("container"),1==isNaN(userheight)&&(userheight=$(window).height(),userheight=Math.floor(.64*userheight),s("userheight",userheight)),userheight<300&&(userheight=300,s("userheight",userheight)),divcontainer.style.height=userheight+"px",k.setSize(void 0,userheight)}function m(){k.get("ACWI").visible?k.update({navigator:{series:{id:"navigat",data:t}}}):k.get("GAB").visible?k.update({navigator:{series:{id:"navigat",data:i}}}):k.get("Gold").visible?k.update({navigator:{series:{id:"navigat",data:a}}}):k.get("USD").visible?k.update({navigator:{series:{id:"navigat",data:o}}}):M>0&&k.get("Oil").visible?$.getJSON("data/oil.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):D>0&&k.get("USH").visible?$.getJSON("data/ushome.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):O>0&&k.get("USSC").visible?$.getJSON("data/usasc.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):w>0&&k.get("World").visible?$.getJSON("data/halworld.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):J>0&&k.get("Europe").visible?$.getJSON("data/europestocks.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):j>0&&k.get("Japan").visible?$.getJSON("data/japanstocks.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):Y>0&&k.get("US10CH").visible?$.getJSON("data/us10chome.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):W>0&&k.get("EM").visible?$.getJSON("data/emstocks.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):G>0&&k.get("EMAsia").visible?$.getJSON("data/globalrealestate.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):N>0&&k.get("LA").visible?$.getJSON("data/chinastocks.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):I>0&&k.get("USGB").visible?$.getJSON("data/usgovbond.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):R>0&&k.get("USA").visible?$.getJSON("data/usastocks.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):F>0&&k.get("EMSC").visible?$.getJSON("data/emsc.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):H>0&&k.get("WM").visible?$.getJSON("data/halwm.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):B>0&&k.get("EUR").visible?$.getJSON("data/euro.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):L>0&&k.get("WSC").visible?$.getJSON("data/halwsc.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):A>0&&k.get("ESC").visible?$.getJSON("data/halwsc.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):P>0&&k.get("CNY").visible?$.getJSON("data/renminbi.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})}):z>0&&k.get("BTC").visible&&$.getJSON("data/bitcoin.json",function(e){k.update({navigator:{series:{id:"navigat",data:e}}})})}function u(){var e=function(){return this.id},t=$(":checkbox:checked").map(e).get(),a=$(":checkbox:disabled").map(e).get(),/*t=t[t.length-1],*/a=a[a.length-1];1==T&&$("#"+t).prop("disabled",!0),T>1&&$("#"+a).prop("disabled",!1)}function p(){c(),extremes.userMin<=extremes.dataMin&&setTimeout(function(){k.update({rangeSelector:{selected:3}})},100)}function v(e,t){$(":checkbox").prop("disabled",!0),setTimeout(function(){e.visible?T>1&&(T-=1,e.hide(),b(t),m(),$(":checkbox").prop("disabled",!1),1==T&&u(),p()):(T+=1,e.show(),f(t),$(":checkbox").prop("disabled",!1),2==T&&u(),m(),c(),l("ddYear1",minYear,maxYear),l("ddYear2",minYear,maxYear),n())},1)}function b(e){e.options.showInLegend=!1,e.legendItem=null,k.legend.destroyItem(e),k.legend.render()}function f(e){e.options.showInLegend=!0,k.legend.renderItem(e),k.legend.render()}function S(e){c(),(e!==e||e>minYear)&&(l("ddYear1",minYear,maxYear),l("ddYear2",minYear,maxYear),n())}function E(){2==(T+=1)&&u(),m()}Highcharts.setOptions({lang:{rangeSelectorZoom:"",rangeSelectorFrom:"",rangeSelectorTo:"",thousandsSep:""}});var k=Highcharts.stockChart("container",{chart:{spacingBottom:17,zoomType:"x",marginRight:49,events:{load:function(e){}}},title:{align:"left",style:{color:"#222222"},text:"Historical Asset Class Returns",margin:7,y:10,x:27},legend:{y:6,enabled:!0,borderColor:"#D8D8D8",borderWidth:1,itemStyle:{fontSize:"14px",cursor:"default"},itemMarginTop:4,labelFormatter:function(){return'<span style="color:'+this.color+';">'+this.name+"</span>"}},plotOptions:{series:{events:{legendItemClick:function(e){event.preventDefault()}}}},rangeSelector:{allButtonsEnabled:!0,inputDateFormat:"%b %Y",inputEditDateFormat:"%b %Y",buttonPosition:{x:27},inputPosition:{y:-5},labelStyle:{y:50},inputBoxHeight:14,inputBoxWidth:70,inputStyle:{visibility:"hidden"},buttonTheme:{style:{color:"#222222"},height:15},buttons:[{type:"year",count:1,text:"1Y"},{type:"year",count:5,text:"5Y"},{type:"year",count:10,text:"10Y"},{type:"all",text:"Max"}]},xAxis:[{ordinal:!1,minRange:2,dateTimeLabelFormats:{month:"%b %Y"},events:{afterSetExtremes:function(){c(),n()}},labels:{style:{color:"#444444",fontSize:"12px"}},plotBands:e}],yAxis:[{tickPixelInterval:36,type:"logarithmic",gridLineColor:"#D8D8D8",lineWidth:1,plotLines:[{value:100,width:1,color:"#333333",zIndex:1}],labels:{align:"right",x:44,y:5,formatter:function(){return Number.prototype.countDecimals=function(){return Math.round(this.valueOf())===this.valueOf()?0:this.toString().split(".")[1].length||0},this.value=this.value-100,this.value.countDecimals()>1&&(this.value=this.value.toFixed(1)),this.value>=1e3&&this.value<1e4&&(this.value=this.value/1e3,1.9==this.value&&(this.value=2),2.9==this.value&&(this.value=3),3.9==this.value&&(this.value=4),4.9==this.value&&(this.value=5),5.9==this.value&&(this.value=6),6.9==this.value&&(this.value=7),7.9==this.value&&(this.value=8),8.9==this.value&&(this.value=9),9.9==this.value&&(this.value=10),this.value=this.value+"k"),this.value>=1e4&&this.value<1e6&&(this.value=this.value/1e3,this.value.countDecimals()>1&&(this.value=this.value.toFixed(1)),this.value=Math.round(this.value),99==this.value&&(this.value=100),1e3==this.value&&(this.value=1),1==this.value?this.value=this.value+"m":1!=this.value&&(this.value=this.value+"k")),this.value>=1e6&&this.value<99e5&&(this.value=this.value/1e6,this.value.countDecimals()>1&&(this.value=this.value.toFixed(1)),1==this.value&&(this.value=1),2==this.value&&(this.value=2),3==this.value&&(this.value=3),4==this.value&&(this.value=4),5==this.value&&(this.value=5),6==this.value&&(this.value=6),7==this.value&&(this.value=7),8==this.value&&(this.value=8),9==this.value&&(this.value=9),this.value=this.value+"m"),this.value>=99e5&&(this.value=this.value/1e6,this.value.countDecimals()>1&&(this.value=this.value.toFixed(1)),this.value=Math.round(this.value),this.value=this.value+"m"),this.value,this.value+"%"},style:{color:"#444444",fontSize:"12px"}}}],tooltip:{borderWidth:0,padding:0,shadow:!1,backgroundColor:"rgba(255,255,255,1)",xDateFormat:"%b %Y",shared:!0,useHTML:!0,valueDecimals:2,formatter:function(){return tooltip_html='<div style="text-align: center">'+Highcharts.dateFormat("%b %Y",this.x)+"</div>",tooltip_html+="<table>",this.points.forEach(function(e){tooltip_html+='<tr style="font-weight: bold; color:'+e.series.color+'"><td>● '+e.series.name+':</td><td style="text-align: right"> '+Highcharts.numberFormat(e.point.change-100,2)+"%</td></tr>"}),tooltip_html+="</table>",tooltip_html}},navigator:{height:25,margin:9,series:{id:"navigat",data:t}},credits:{enabled:!1},series:[{data:[],name:"Global Stocks",type:"scatter",id:"ACWIc",color:"#0343df",marker:{symbol:"circle"}},{compare:"percent",compareBase:100,showInNavigator:!1,name:"Global Stocks",id:"ACWI",data:t,color:"#0343df",tooltip:{valueDecimals:2},linkedTo:":previous"},{data:[],name:"Global Bonds",type:"scatter",id:"GABc",color:"#c20078",marker:{symbol:"circle"}},{compare:"percent",compareBase:100,showInNavigator:!1,name:"Global Bonds",id:"GAB",data:i,color:"#c20078",tooltip:{valueDecimals:2},linkedTo:":previous"},{data:[],name:"Gold",type:"scatter",id:"Goldc",color:"#b59410",marker:{symbol:"circle"}},{compare:"percent",compareBase:100,showInNavigator:!1,name:"Gold",id:"Gold",data:a,color:"#b59410",tooltip:{valueDecimals:2},linkedTo:":previous"},{data:[],name:"US Dollar",type:"scatter",id:"USDc",color:"#15b01a",marker:{symbol:"circle"}},{compare:"percent",compareBase:100,showInNavigator:!1,name:"US Dollar",id:"USD",data:o,color:"#15b01a",tooltip:{valueDecimals:2},linkedTo:":previous"}]});extremes=1,chartDate1=1,chartDate2=1,chartMonth1=1,chartYear1=1,chartMonth2=1,chartYear2=1,c(),l("ddYear1",minYear,maxYear),l("ddYear2",minYear,maxYear),n(),k.xAxis[0].setExtremes(Date.UTC(1899,11),Date.UTC(chartYear2,chartMonth2)),r(),g(),$("#togglesources").click(function(){$("#sources").toggle(),$("html, body").scrollTop($(document).height())}),$("#toggleoptions").click(function(){$("#options").toggle(),$("html, body").scrollTop($(document).height())}),logtype=1,document.getElementById("log").onchange=function(){return 1==logtype?($("#container").highcharts().yAxis[0].update({type:"linear"}),void(logtype=2)):2==logtype?($("#container").highcharts().yAxis[0].update({type:"logarithmic"}),void(logtype=1)):void 0},barstype=1,document.getElementById("bars").onchange=function(){return 1==barstype?($("#container").highcharts().xAxis[0].update({plotBands:[]}),void(barstype=2)):barstype>=2?($("#container").highcharts().xAxis[0].update({plotBands:e}),void(barstype=1)):void 0};var C=window.navigator.userAgent,y=C.indexOf("MSIE "),x=C.indexOf("Trident/"),U=C.indexOf("Edge/");(y>0||x>0||U>0)&&(document.getElementById("p2").innerHTML='<span style="white-space:nowrap">&emsp;&emsp;&emsp;&emsp;&ensp;Annual</span> Return %'),$("#heightForm").submit(function(){return h(),!1}),window.onresize=function(){r(),setTimeout(function(){g()},100)},$("#ddMonth1").change(function(e){c(),datevalue=parseInt($(this).val()),chartYear1==chartYear2&&datevalue>=chartMonth2&&(chartMonth2=datevalue+1),k.xAxis[0].setExtremes(Date.UTC(chartYear1,datevalue),Date.UTC(chartYear2,chartMonth2))}),$("#ddYear1").change(function(e){c(),datevalue=parseInt($(this).val()),datevalue>=chartYear2&&(chartYear2=datevalue,chartMonth1>=chartMonth2&&(chartMonth2=chartMonth1+1)),previousMonth=chartMonth1-1,k.xAxis[0].setExtremes(Date.UTC(datevalue,chartMonth1),Date.UTC(chartYear2,chartMonth2))}),$("#ddMonth2").change(function(e){c(),datevalue=parseInt($(this).val()),chartYear1==chartYear2&&datevalue<=chartMonth1&&(chartMonth1=datevalue-1),1871==chartYear2&&0==datevalue&&(chartYear1=1871,chartMonth1=0),k.xAxis[0].setExtremes(Date.UTC(chartYear1,chartMonth1),Date.UTC(chartYear2,datevalue))}),$("#ddYear2").change(function(e){c(),datevalue=parseInt($(this).val()),datevalue<=chartYear1&&(chartYear1=datevalue,chartMonth2<=chartMonth1&&(chartMonth1=chartMonth2-1)),1871==datevalue&&0==chartMonth2&&(chartYear1=1871,chartMonth1=0),k.xAxis[0].setExtremes(Date.UTC(chartYear1,chartMonth1),Date.UTC(datevalue,chartMonth2))}),$("#labelForm").submit(function(){return labelticks=document.getElementById("labelticks").value,1==isNaN(labelticks)&&(labelticks=36,s("labelticks",labelticks)),labelticks<1&&(labelticks=1,s("labelticks",labelticks)),$("#container").highcharts().yAxis[0].update({tickPixelInterval:labelticks}),!1});var T=4;$("#toggleACWI").click(function(){v(k.get("ACWI"),k.get("ACWIc"))}),$("#toggleGAB").click(function(){v(k.get("GAB"),k.get("GABc"))}),$("#toggleGold").click(function(){v(k.get("Gold"),k.get("Goldc"))}),$("#toggleUSD").click(function(){v(k.get("USD"),k.get("USDc"))});var I=0;$("#toggleUSGB").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(I>0)var e=k.get("USGB"),t=k.get("USGBc");if(org1=minYear,1==I&&T>1)return I=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==I&&(document.getElementById("toggleUSGB").checked=!1,$.getJSON("data/usgovbond.json",function(e){T+=1,u(),I=1,k.addSeries({data:[],name:"US Government Bonds",id:"USGBc",type:"scatter",color:"#653700",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#653700",id:"USGB",name:"US Government Bonds",linkedTo:"USGBc",data:e}),document.getElementById("toggleUSGB").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==I&&(I=1,e.show(),f(t),E())},1)});var M=0;$("#toggleOil").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(M>0)var e=k.get("Oil"),t=k.get("Oilc");if(org1=minYear,1==M&&T>1)return M=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==M&&(document.getElementById("toggleOil").checked=!1,$.getJSON("data/oil.json",function(e){T+=1,u(),M=1,k.addSeries({data:[],name:"Crude Oil",id:"Oilc",type:"scatter",color:"#2C2416",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#2C2416",id:"Oil",name:"Crude Oil",linkedTo:"Oilc",data:e}),document.getElementById("toggleOil").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==M&&(M=1,e.show(),f(t),E())},1)});var B=0;$("#toggleEUR").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(B>0)var e=k.get("EUR"),t=k.get("EURc");if(org1=minYear,1==B&&T>1)return B=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==B&&(document.getElementById("toggleEUR").checked=!1,$.getJSON("data/euro.json",function(e){T+=1,u(),B=1,k.addSeries({data:[],name:"Euro",id:"EURc",type:"scatter",color:"#0485d1",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#0485d1",id:"EUR",name:"Euro",linkedTo:"EURc",data:e}),document.getElementById("toggleEUR").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==B&&(B=1,e.show(),f(t),E())},1)});var D=0;$("#toggleUSH").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(D>0)var e=k.get("USH"),t=k.get("USHc");if(org1=minYear,1==D&&T>1)return D=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==D&&(document.getElementById("toggleUSH").checked=!1,$.getJSON("data/ushome.json",function(e){T+=1,u(),D=1,k.addSeries({data:[],name:"US Home Real Estate",id:"USHc",type:"scatter",color:"#9a0eea",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#9a0eea",id:"USH",name:"US Home Real Estate",linkedTo:"USHc",data:e}),document.getElementById("toggleUSH").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==D&&(D=1,e.show(),f(t),E())},1)});var Y=0;$("#toggleUS10CH").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(Y>0)var e=k.get("US10CH"),t=k.get("US10CHc");if(org1=minYear,1==Y&&T>1)return Y=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==Y&&(document.getElementById("toggleUS10CH").checked=!1,$.getJSON("data/us10chome.json",function(e){T+=1,u(),Y=1,k.addSeries({data:[],name:"US 10-City Home Real Estate",id:"US10CHc",type:"scatter",color:"#653700",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#653700",id:"US10CH",name:"US 10-City Home Real Estate",linkedTo:"US10CHc",data:e}),document.getElementById("toggleUS10CH").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==Y&&(Y=1,e.show(),f(t),E())},1)});var w=0;$("#toggleWorld").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(w>0)var e=k.get("World"),t=k.get("Worldc");if(org1=minYear,1==w&&T>1)return w=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==w&&(document.getElementById("toggleWorld").checked=!1,$.getJSON("data/halworld.json",function(e){T+=1,u(),w=1,k.addSeries({data:[],name:"hal World",id:"Worldc",type:"scatter",color:"#e50000",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#e50000",id:"World",name:"hal World",linkedTo:"Worldc",data:e}),document.getElementById("toggleWorld").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==w&&(w=1,e.show(),f(t),E())},1)});var N=0;$("#toggleChina").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(N>0)var e=k.get("LA"),t=k.get("LAc");if(org1=minYear,1==N&&T>1)return N=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==N&&(document.getElementById("toggleChina").checked=!1,$.getJSON("data/chinastocks.json",function(e){T+=1,u(),N=1,k.addSeries({data:[],name:"China Stocks",id:"LAc",type:"scatter",color:"#e50000",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#e50000",id:"LA",name:"China Stocks",linkedTo:"LAc",data:e}),document.getElementById("toggleChina").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==N&&(N=1,e.show(),f(t),E())},1)});var A=0;$("#toggleESC").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(A>0)var e=k.get("ESC"),t=k.get("ESCc");if(org1=minYear,1==A&&T>1)return A=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==A&&(document.getElementById("toggleESC").checked=!1,$.getJSON("data/europesc.json",function(e){T+=1,u(),A=1,k.addSeries({data:[],name:"Europe Small Cap Stocks",id:"ESCc",type:"scatter",color:"#011288",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#011288",id:"ESC",name:"Europe Small Cap Stocks",linkedTo:"ESCc",data:e}),document.getElementById("toggleESC").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==A&&(A=1,e.show(),f(t),E())},1)});var O=0;$("#toggleUSSC").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(O>0)var e=k.get("USSC"),t=k.get("USSCc");if(org1=minYear,1==O&&T>1)return O=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==O&&(document.getElementById("toggleUSSC").checked=!1,$.getJSON("data/usasc.json",function(e){T+=1,u(),O=1,k.addSeries({data:[],name:"USA Small Cap Stocks",id:"USSCc",type:"scatter",color:"#D35400",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#D35400",id:"USSC",name:"USA Small Cap Stocks",linkedTo:"USSCc",data:e}),document.getElementById("toggleUSSC").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==O&&(O=1,e.show(),f(t),E())},1)});var J=0;$("#toggleEurope").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(J>0)var e=k.get("Europe"),t=k.get("Europec");if(org1=minYear,1==J&&T>1)return J=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==J&&(document.getElementById("toggleEurope").checked=!1,$.getJSON("data/europestocks.json",function(e){T+=1,u(),J=1,k.addSeries({data:[],name:"Europe Stocks",id:"Europec",type:"scatter",color:"#029386",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#029386",id:"Europe",name:"Europe Stocks",linkedTo:"Europec",data:e}),document.getElementById("toggleEurope").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==J&&(J=1,e.show(),f(t),E())},1)});var W=0;$("#toggleEM").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(W>0)var e=k.get("EM"),t=k.get("EMc");if(org1=minYear,1==W&&T>1)return W=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==W&&(document.getElementById("toggleEM").checked=!1,$.getJSON("data/emstocks.json",function(e){T+=1,u(),W=1,k.addSeries({data:[],name:"Emerging Markets Stocks",id:"EMc",type:"scatter",color:"#8f1402",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#8f1402",id:"EM",name:"Emerging Markets Stocks",linkedTo:"EMc",data:e}),document.getElementById("toggleEM").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==W&&(W=1,e.show(),f(t),E())},1)});var j=0;$("#toggleJapan").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(j>0)var e=k.get("Japan"),t=k.get("Japanc");if(org1=minYear,1==j&&T>1)return j=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==j&&(document.getElementById("toggleJapan").checked=!1,$.getJSON("data/japanstocks.json",function(e){T+=1,u(),j=1,k.addSeries({data:[],name:"Japan Stocks",id:"Japanc",type:"scatter",color:"#ff028d",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#ff028d",id:"Japan",name:"Japan Stocks",linkedTo:"Japanc",data:e}),document.getElementById("toggleJapan").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==j&&(j=1,e.show(),f(t),E())},1)});var H=0;$("#toggleWM").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(H>0)var e=k.get("WM"),t=k.get("WMc");if(org1=minYear,1==H&&T>1)return H=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==H&&(document.getElementById("toggleWM").checked=!1,$.getJSON("data/halwm.json",function(e){T+=1,u(),H=1,k.addSeries({data:[],name:"hal World Momentum",id:"WMc",type:"scatter",color:"#9a0eea",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#9a0eea",id:"WM",name:"hal World Momentum",linkedTo:"WMc",data:e}),document.getElementById("toggleWM").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==H&&(H=1,e.show(),f(t),E())},1)});var G=0;$("#toggleGRE").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(G>0)var e=k.get("EMAsia"),t=k.get("EMAsiac");if(org1=minYear,1==G&&T>1)return G=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==G&&(document.getElementById("toggleGRE").checked=!1,$.getJSON("data/globalrealestate.json",function(e){T+=1,u(),G=1,k.addSeries({data:[],name:"Global Real Estate",id:"EMAsiac",type:"scatter",color:"#5a7d9a",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#5a7d9a",id:"EMAsia",name:"Global Real Estate",linkedTo:"EMAsiac",data:e}),document.getElementById("toggleGRE").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==G&&(G=1,e.show(),f(t),E())},1)});var L=0;$("#toggleWSC").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(L>0)var e=k.get("WSC"),t=k.get("WSCc");if(org1=minYear,1==L&&T>1)return L=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==L&&(document.getElementById("toggleWSC").checked=!1,$.getJSON("data/halwsc.json",function(e){T+=1,u(),L=1,k.addSeries({data:[],name:"World Small Cap Stocks",id:"WSCc",type:"scatter",color:"#06c2ac",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#06c2ac",id:"WSC",name:"World Small Cap Stocks",linkedTo:"WSCc",data:e}),document.getElementById("toggleWSC").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==L&&(L=1,e.show(),f(t),E())},1)});var R=0;$("#toggleUSA").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(R>0)var e=k.get("USA"),t=k.get("USAc");if(org1=minYear,1==R&&T>1)return R=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==R&&(document.getElementById("toggleUSA").checked=!1,$.getJSON("data/usastocks.json",function(e){T+=1,u(),R=1,k.addSeries({data:[],name:"USA Stocks",id:"USAc",type:"scatter",color:"#7e1e9c",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#7e1e9c",id:"USA",name:"USA Stocks",linkedTo:"USAc",data:e}),document.getElementById("toggleUSA").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==R&&(R=1,e.show(),f(t),E())},1)});var F=0;$("#toggleEMSC").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(F>0)var e=k.get("EMSC"),t=k.get("EMSCc");if(org1=minYear,1==F&&T>1)return F=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==F&&(document.getElementById("toggleEMSC").checked=!1,$.getJSON("data/emsc.json",function(e){T+=1,u(),F=1,k.addSeries({data:[],name:"Emerging Markets Small Cap Stocks",id:"EMSCc",type:"scatter",color:"#06470c",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#06470c",id:"EMSC",name:"Emerging Markets Small Cap Stocks",linkedTo:"EMSCc",data:e}),document.getElementById("toggleEMSC").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==F&&(F=1,e.show(),f(t),E())},1)}),$.ajaxSetup({async:!1});var P=0;$("#toggleCNY").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(P>0)var e=k.get("CNY"),t=k.get("CNYc");if(org1=minYear,1==P&&T>1)return P=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==P&&(document.getElementById("toggleCNY").checked=!1,$.getJSON("data/renminbi.json",function(e){T+=1,u(),P=1,k.addSeries({data:[],name:"Renminbi",id:"CNYc",type:"scatter",color:"#ff000d",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#ff000d",id:"CNY",name:"Renminbi",linkedTo:"CNYc",data:e}),document.getElementById("toggleCNY").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==P&&(P=1,e.show(),f(t),E())},1)});var z=0;$("#toggleBTC").click(function(){$(":checkbox").prop("disabled",!0),setTimeout(function(){if(z>0)var e=k.get("BTC"),t=k.get("BTCc");if(org1=minYear,1==z&&T>1)return z=2,T-=1,e.hide(),m(),b(t),$(":checkbox").prop("disabled",!1),1==T&&u(),void p();0==z&&(document.getElementById("toggleBTC").checked=!1,$.getJSON("data/bitcoin.json",function(e){T+=1,u(),z=1,k.addSeries({data:[],name:"Bitcoin",id:"BTCc",type:"scatter",color:"#f97306",marker:{symbol:"circle"}}),k.addSeries({compare:"percent",compareBase:100,showInNavigator:!1,color:"#f97306",id:"BTC",name:"Bitcoin",linkedTo:"BTCc",data:e}),document.getElementById("toggleBTC").checked=!0,m(),S(org1)})),$(":checkbox").prop("disabled",!1),2==z&&(z=1,e.show(),f(t),E())},1)})})})})}),Highcharts.chart("container2",{chart:{plotBackgroundColor:null,plotBorderWidth:null,plotShadow:!1,type:"pie"},title:{text:"Global Asset Portfolio in September 2018",style:{color:"#222222",fontSize:"16px"}},tooltip:{enabled:!1},credits:{enabled:!1},plotOptions:{pie:{startAngle:209,colors:["#607D8B","#c20078","#27AE60","#2C2416","#2980B9","#b59410"],allowPointSelect:!0,cursor:"pointer",dataLabels:{enabled:!0,formatter:function(){return'<span style="color:'+this.point.color+'">'+this.point.name+": "+this.point.y.toFixed(2)+"%</span>"},style:{fontSize:"14px",fontFamily:"'Lucida Grande', 'Lucida Sans Unicode', 'Verdana', 'Arial', 'Helvetica', sans-serif"}}}},series:[{name:"Assets",colorByPoint:!0,innerSize:'70%',data:[{name:"Real Estate",y:42.14},{name:"Bonds",y:17.93},{name:"Currencies",y:15.04},{name:"Crude Oil",y:14.16},{name:"Stocks",y:9.39},{name:"Gold",y:1.34}]}]});});
 </script>
 </head>
 <body>
@@ -86,22 +86,22 @@ $(function(){var e=[{color:"#E6E6E6",from:Date.UTC(1873,9),to:Date.UTC(1879,2)},
         <input type="checkbox" id="toggleACWI" autocomplete="off" checked="checked"><label for="toggleACWI">All Country World</label>
       </div>
       <div class="cell" title="Since 1899">
-        <span class="gpct">5.10</span>
+        <span class="gpct">5.02</span>
       </div>
       <div class="cell">
-        <span class="gpct">10.04</span>
+        <span class="rpct">-2.81</span>
       </div>
-      <div class="cell" title="Market Cap: $54.10T, Holdings: 8880">
-        9.40
+      <div class="cell" title="Market Cap: $54.03, Holdings: 8870">
+        9.39
       </div>
 	  <div class="cell" title="1913-1920">
         <span class="rpct">−61.80</span>
       </div>
 	  <div class="cell">
-        7 months
+        9 months
       </div>
 	  <div class="cell">
-        <span class="gpct">1.99</span> <img src="img/up.png" class="arrow" alt="Above" title="Above" style="width:16px;height:16px;">
+        <span class="rpct">-5.75</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
       </div>
     </div>
     
@@ -110,22 +110,22 @@ $(function(){var e=[{color:"#E6E6E6",from:Date.UTC(1873,9),to:Date.UTC(1879,2)},
         <input type="checkbox" id="toggleUSA" autocomplete="off"><label for="toggleUSA">USA</label>
       </div>
       <div class="cell" title="Since 1871">
-        <span class="gpct">6.90</span>
+        <span class="gpct">6.84</span>
       </div>
       <div class="cell">
-        <span class="gpct">17.25</span>
+        <span class="gpct">4.69</span>
       </div>
-      <div class="cell" title="Market Cap: $25.86T, Holdings: 626">
+      <div class="cell" title="Market Cap: $25.82T, Holdings: 625">
         4.49
       </div>
 	  <div class="cell" title="1929–1932">
         <span class="rpct">−77.00</span>
       </div>
 	  <div class="cell">
-        At ATH
+        1 month
       </div>
 	  <div class="cell">
-         <span class="gpct">6.45</span> <img src="img/up.png" class="arrow" alt="Above" title="Above" style="width:16px;height:16px;">
+         <span class="rpct">-1.68</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
       </div>
     </div>
     
@@ -134,22 +134,22 @@ $(function(){var e=[{color:"#E6E6E6",from:Date.UTC(1873,9),to:Date.UTC(1879,2)},
         <input type="checkbox" id="toggleEurope" autocomplete="off"><label for="toggleEurope">Europe</label>
       </div>
       <div class="cell" title="Since 1899">
-        <span class="gpct">4.19</span>
+        <span class="gpct">4.12</span>
       </div>
       <div class="cell">
-        <span class="gpct">1.14</span>
+        <span class="rpct">-9.95</span>
       </div>
-      <div class="cell" title="Market Cap: $9.09T, Holdings: 446">
+      <div class="cell" title="Market Cap: $9.11T, Holdings: 446">
         1.58
       </div>
 	  <div class="cell" title="1913-1920">
         <span class="rpct">−71.31</span>
       </div>
 	  <div class="cell">
-        7 months
+        9 months
       </div>
 	  <div class="cell">
-        <span class="rpct">-2.51</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
+        <span class="rpct">-8.53</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
       </div>
     </div>
     
@@ -158,22 +158,22 @@ $(function(){var e=[{color:"#E6E6E6",from:Date.UTC(1873,9),to:Date.UTC(1879,2)},
         <input type="checkbox" id="toggleEM" autocomplete="off"><label for="toggleEM">Emerging Markets</label>
       </div>
       <div class="cell" title="Since 1899">
-        <span class="gpct">4.17</span>
+        <span class="gpct">4.08</span>
       </div>
       <div class="cell">
-        <span class="rpct">-2.38</span>
+        <span class="rpct">-14.28</span>
       </div>
-      <div class="cell" title="Market Cap: $5.18T, Holdings: 1136">
+      <div class="cell" title="Market Cap: $5.18T, Holdings: 1151">
         0.90
       </div>
 	  <div class="cell" title="1944-1948">
         <span class="rpct">−84.43</span>
       </div>
 	  <div class="cell">
-        7 months
+        9 months
       </div>
 	  <div class="cell">
-        <span class="rpct">-6.67</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
+        <span class="rpct">-13.36</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
       </div>
     </div>
 	
@@ -182,13 +182,13 @@ $(function(){var e=[{color:"#E6E6E6",from:Date.UTC(1873,9),to:Date.UTC(1879,2)},
         <input type="checkbox" id="toggleJapan" autocomplete="off"><label for="toggleJapan">Japan</label>
       </div>
       <div class="cell" title="Since 1899">
-        <span class="gpct">4.73</span>
+        <span class="gpct">4.67</span>
       </div>
       <div class="cell">
-        <span class="gpct">7.16</span>
+        <span class="rpct">-5.53</span>
       </div>
-      <div class="cell" title="Market Cap: $3.46T, Holdings: 322">
-        0.60
+      <div class="cell" title="Market Cap: $3.54T, Holdings: 322">
+        0.62
       </div>
 	  <div class="cell" title="1937-1947">
         <span class="rpct">−97.52</span>
@@ -197,7 +197,7 @@ $(function(){var e=[{color:"#E6E6E6",from:Date.UTC(1873,9),to:Date.UTC(1879,2)},
         29 years
       </div>
 	  <div class="cell">
-        <span class="rpct">-2.46</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
+        <span class="rpct">-7.31</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
       </div>
     </div>
 	
@@ -206,13 +206,13 @@ $(function(){var e=[{color:"#E6E6E6",from:Date.UTC(1873,9),to:Date.UTC(1879,2)},
         <input type="checkbox" id="toggleChina" autocomplete="off"><label for="toggleChina">China</label>
       </div>
       <div class="cell" title="Since 1992">
-        <span class="rpct">-0.63</span>
+        <span class="rpct">-1.14</span>
       </div>
       <div class="cell">
-        <span class="rpct">-1.70</span>
+        <span class="rpct">-18.58</span>
       </div>
-      <div class="cell" title="Market Cap: $1.60T, Holdings: 447">
-        0.27
+      <div class="cell" title="Market Cap: $1.60T, Holdings: 461">
+        0.28
       </div>
 	  <div class="cell" title="1936-1945">
         <span class="rpct">−100.00</span>
@@ -221,7 +221,7 @@ $(function(){var e=[{color:"#E6E6E6",from:Date.UTC(1873,9),to:Date.UTC(1879,2)},
         82 years
       </div>
 	  <div class="cell">
-        <span class="rpct">-9.23</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
+        <span class="rpct">-18.46</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
       </div>
     </div>
 	
@@ -258,22 +258,22 @@ $(function(){var e=[{color:"#E6E6E6",from:Date.UTC(1873,9),to:Date.UTC(1879,2)},
         <input type="checkbox" id="toggleUSSC" autocomplete="off"><label for="toggleUSSC">USA Small Cap</label>
       </div>
       <div class="cell" title="Since 1927">
-        <span class="gpct">8.32</span>
+        <span class="gpct">8.16</span>
       </div>
       <div class="cell">
-        <span class="gpct">21.78</span>
+        <span class="gpct">0.41</span>
       </div>
-      <div class="cell" title="Market Cap: $3.84T, Holdings: 1792">
+      <div class="cell" title="Market Cap: $3.77T, Holdings: 1789">
         0.66
       </div>
 	  <div class="cell" title="1929–1932">
         <span class="rpct">−85.88</span>
       </div>
 	  <div class="cell">
-        At ATH
+        2 months
       </div>
 	  <div class="cell">
-        <span class="gpct">8.62</span> <img src="img/up.png" class="arrow" alt="Above" title="Above" style="width:16px;height:16px;">
+        <span class="rpct">-5.06</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
       </div>
     </div>
 	
@@ -282,22 +282,22 @@ $(function(){var e=[{color:"#E6E6E6",from:Date.UTC(1873,9),to:Date.UTC(1879,2)},
         <input type="checkbox" id="toggleESC" autocomplete="off"><label for="toggleESC">Europe Small Cap</label>
       </div>
        <div class="cell" title="Since 1974">
-        <span class="gpct">11.10</span>
+        <span class="gpct">10.73</span>
       </div>
       <div class="cell">
-        <span class="gpct">6.00</span>
+        <span class="rpct">-10.76</span>
       </div>
-      <div class="cell" title="Market Cap: $1.42T, Holdings: 1015">
+      <div class="cell" title="Market Cap: $1.37T, Holdings: 1009">
         0.24
       </div>
 	  <div class="cell" title="2007–2009">
         <span class="rpct">−68.19</span>
       </div>
 	  <div class="cell">
-        7 months
+        9 months
       </div>
 	  <div class="cell">
-        <span class="rpct">-1.38</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
+        <span class="rpct">-11.78</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
       </div>
     </div>
 	
@@ -306,22 +306,22 @@ $(function(){var e=[{color:"#E6E6E6",from:Date.UTC(1873,9),to:Date.UTC(1879,2)},
         <input type="checkbox" id="toggleEMSC" autocomplete="off"><label for="toggleEMSC">EM Small Cap</label>
       </div>
       <div class="cell" title="Since 1994">
-        <span class="gpct">2.81</span>
+        <span class="gpct">2.17</span>
       </div>
       <div class="cell">
-        <span class="rpct">-2.60</span>
+        <span class="rpct">-18.91</span>
       </div>
-      <div class="cell" title="Market Cap: $0.68T, Holdings: 1739">
+      <div class="cell" title="Market Cap: $0.65T, Holdings: 1731">
         0.11
       </div>
 	  <div class="cell" title="1994–2001">
         <span class="rpct">−69.39</span>
       </div>
 	  <div class="cell">
-        7 months
+        9 months
       </div>
 	  <div class="cell">
-        <span class="rpct">-8.47</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
+        <span class="rpct">-17.40</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
       </div>
     </div>
 	
@@ -361,10 +361,10 @@ $(function(){var e=[{color:"#E6E6E6",from:Date.UTC(1873,9),to:Date.UTC(1879,2)},
         <span class="gpct">1.38</span>
       </div>
       <div class="cell">
-        <span class="gpct">4.03</span>
+        <span class="gpct">3.64</span>
       </div>
-      <div class="cell" title="Market Value: $240.90T">
-        41.87
+      <div class="cell" title="Market Value: $242.37T">
+        42.14
       </div>
       <div class="cell" title="1911–1918">
         <span class="rpct">-47.93</span>
@@ -373,7 +373,7 @@ $(function(){var e=[{color:"#E6E6E6",from:Date.UTC(1873,9),to:Date.UTC(1879,2)},
         At ATH
       </div>
 	  <div class="cell">
-        <span class="gpct">1.48</span> <img src="img/up.png" class="arrow" alt="Above" title="Above" style="width:16px;height:16px;">
+        <span class="gpct">1.20</span> <img src="img/up.png" class="arrow" alt="Above" title="Above" style="width:16px;height:16px;">
       </div>
     </div>
 	
@@ -382,13 +382,13 @@ $(function(){var e=[{color:"#E6E6E6",from:Date.UTC(1873,9),to:Date.UTC(1879,2)},
         <input type="checkbox" id="toggleGAB" autocomplete="off" checked="checked><label for="toggleGBA">Global Bonds</label>
       </div>
       <div class="cell" title="Since 1899">
-         <span class="gpct">1.73</span>
+         <span class="gpct">1.71</span>
       </div>
       <div class="cell">
-         <span class="rpct">−3.39</span>
+         <span class="rpct">−4.37</span>
       </div>
-      <div class="cell" title="Market Value: $100.13T">
-        17.40
+      <div class="cell" title="Market Value: $103.15T">
+        17.93
       </div>
 	  <div class="cell" title="1913-1920">
          <span class="rpct">−69.58</span>
@@ -397,7 +397,7 @@ $(function(){var e=[{color:"#E6E6E6",from:Date.UTC(1873,9),to:Date.UTC(1879,2)},
         6 years
       </div>
 	  <div class="cell">
-        <span class="rpct">-1.86</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
+        <span class="rpct">-3.07</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
       </div>
     </div>
 	
@@ -406,13 +406,13 @@ $(function(){var e=[{color:"#E6E6E6",from:Date.UTC(1873,9),to:Date.UTC(1879,2)},
         <input type="checkbox" id="toggleOil" autocomplete="off"><label for="toggleOil">Crude Oil</label>
       </div>
        <div class="cell" title="Since 1871">
-        <span class="rpct">−0.08</span>
+        <span class="rpct">−0.11</span>
       </div>
       <div class="cell">
-        <span class="gpct">45.45</span>
+        <span class="gpct">19.09</span>
       </div>
-      <div class="cell" title="Market Value: $86.09T">
-        14.95
+      <div class="cell" title="Market Value: $81.43T">
+        14.16
       </div>
 	  <div class="cell" title="1871–1931">
         <span class="rpct">−88.26</span>
@@ -421,7 +421,7 @@ $(function(){var e=[{color:"#E6E6E6",from:Date.UTC(1873,9),to:Date.UTC(1879,2)},
         10 years
       </div>
 	  <div class="cell">
-        <span class="gpct">7.60</span> <img src="img/up.png" class="arrow" alt="Above" title="Above" style="width:16px;height:16px;">
+        <span class="rpct">-0.29</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
       </div>
     </div>
 
@@ -430,13 +430,13 @@ $(function(){var e=[{color:"#E6E6E6",from:Date.UTC(1873,9),to:Date.UTC(1879,2)},
         <input type="checkbox" id="toggleUSH" autocomplete="off"><label for="toggleUSH">US Real Estate</label> 
       </div>
       <div class="cell" title="Since 1890">
-        <span class="gpct">0.42</span>
+        <span class="gpct">0.43</span>
       </div>
       <div class="cell">
-        <span class="gpct">3.48</span>
+        <span class="gpct">2.98</span>
       </div>
-      <div class="cell" title="Market Value: $32.24T">
-        5.60
+      <div class="cell" title="Market Value: $32.64T">
+        5.68
       </div>
 	  <div class="cell" title="1894–1924">
         <span class="rpct">−47.07</span>
@@ -445,7 +445,7 @@ $(function(){var e=[{color:"#E6E6E6",from:Date.UTC(1873,9),to:Date.UTC(1879,2)},
         12 years
       </div>
 	  <div class="cell">
-        <span class="gpct">1.42</span> <img src="img/up.png" class="arrow" alt="Above" title="Above" style="width:16px;height:16px;">
+        <span class="gpct">1.75</span> <img src="img/up.png" class="arrow" alt="Above" title="Above" style="width:16px;height:16px;">
       </div>
     </div>
 
@@ -454,13 +454,13 @@ $(function(){var e=[{color:"#E6E6E6",from:Date.UTC(1873,9),to:Date.UTC(1879,2)},
         <input type="checkbox" id="toggleUSGB" autocomplete="off""><label for="toggleUSGB">USG Bonds</label>
       </div>
       <div class="cell" title="Since 1871">
-        <span class="gpct">2.57</span>
+        <span class="gpct">2.55</span>
       </div>
       <div class="cell">
-        <span class="rpct">−5.05</span>
+        <span class="rpct">−5.46</span>
       </div>
-      <div class="cell" title="Market Value: $17.57T">
-        3.05
+      <div class="cell" title="Market Value: $18.02T">
+        3.13
       </div>
 	  <div class="cell" title="1941-1980">
         <span class="rpct">−60.28</span>
@@ -469,7 +469,7 @@ $(function(){var e=[{color:"#E6E6E6",from:Date.UTC(1873,9),to:Date.UTC(1879,2)},
         2 years
       </div>
 	  <div class="cell">
-        <span class="rpct">-0.31</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
+        <span class="rpct">-1.20</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
       </div>
     </div>
 	
@@ -478,13 +478,13 @@ $(function(){var e=[{color:"#E6E6E6",from:Date.UTC(1873,9),to:Date.UTC(1879,2)},
         <input type="checkbox" id="toggleGold" autocomplete="off" checked="checked"><label for="toggleGold">Gold</label>
       </div>
        <div class="cell" title="Since 1871">
-        <span class="gpct">0.77</span>
+        <span class="gpct">0.78</span>
       </div>
       <div class="cell">
-        <span class="rpct">−11.02</span>
+        <span class="rpct">−6-65</span>
       </div>
-      <div class="cell" title="Market Value: $7.59T">
-        1.31
+      <div class="cell" title="Market Value: $7.70T">
+        1.34
       </div>
 	  <div class="cell" title="1980–2001">
         <span class="rpct">−83.00</span>
@@ -493,7 +493,7 @@ $(function(){var e=[{color:"#E6E6E6",from:Date.UTC(1873,9),to:Date.UTC(1879,2)},
         38 years
       </div>
 	  <div class="cell">
-        <span class="rpct">-7.22</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
+        <span class="rpct">-4.69</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
       </div>
     </div>
 	
@@ -530,22 +530,22 @@ $(function(){var e=[{color:"#E6E6E6",from:Date.UTC(1873,9),to:Date.UTC(1879,2)},
         <input type="checkbox" id="toggleCNY" autocomplete="off"><label for="toggleCNY">Renminbi</label>
       </div>
        <div class="cell" title="Since 1960">
-        <span class="rpct">−5.27</span>
+        <span class="rpct">−5.29</span>
       </div>
       <div class="cell">
-        <span class="rpct">-4.33</span>
+        <span class="rpct">-7.07</span>
       </div>
-      <div class="cell" title="M2 Money Supply Value: $26.03T">
-        4.52
+      <div class="cell" title="M2 Money Supply Value: $25.96T">
+        4.51
       </div>
 	  <div class="cell" title="1960–2018">
-        <span class="rpct">−95.80</span>
+        <span class="rpct">−95.90</span>
       </div>
 	  <div class="cell">
         58 years
       </div>
 	  <div class="cell">
-        <span class="rpct">-5.59</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
+        <span class="rpct">-6.29</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
       </div>
     </div>
    
@@ -557,19 +557,19 @@ $(function(){var e=[{color:"#E6E6E6",from:Date.UTC(1873,9),to:Date.UTC(1879,2)},
         <span class="rpct">−2.01</span>
       </div>
       <div class="cell">
-        <span class="rpct">−2.06</span>
+        <span class="rpct">−2.37</span>
       </div>
-      <div class="cell" title="M2 Money Supply Value: $14.21T">
-        2.47
+      <div class="cell" title="M2 Money Supply Value: $14.25T">
+        2.48
       </div>
 	  <div class="cell" title="1897–2018">
-        <span class="rpct">−97.50</span>
+        <span class="rpct">−97.51</span>
       </div>
 	  <div class="cell">
         121 years
       </div>
 	  <div class="cell">
-        <span class="rpct">-0.68</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
+        <span class="rpct">-0.48</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
       </div>
     </div>
 
@@ -578,13 +578,13 @@ $(function(){var e=[{color:"#E6E6E6",from:Date.UTC(1873,9),to:Date.UTC(1879,2)},
         <input type="checkbox" id="toggleEUR" autocomplete="off"><label for="toggleEUR">Euro</label>
       </div>
        <div class="cell" title="Since 1999">
-        <span class="rpct">−2.13</span>
+        <span class="rpct">−2.27</span>
       </div>
       <div class="cell">
-        <span class="rpct">-3.43</span>
+        <span class="rpct">-5.03</span>
       </div>
-       <div class="cell" title="M2 Money Supply Value: $13.38T">
-        2.32
+       <div class="cell" title="M2 Money Supply Value: $13.22T">
+        2.30
       </div>
 	  <div class="cell" title="2008–2016">
         <span class="rpct">−40.53</span>
@@ -593,7 +593,7 @@ $(function(){var e=[{color:"#E6E6E6",from:Date.UTC(1873,9),to:Date.UTC(1879,2)},
         10 years
       </div>
 	  <div class="cell">
-        <span class="rpct">-3.22</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
+        <span class="rpct">-5.12</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
       </div>
     </div>
     
@@ -602,22 +602,22 @@ $(function(){var e=[{color:"#E6E6E6",from:Date.UTC(1873,9),to:Date.UTC(1879,2)},
         <input type="checkbox" id="toggleBTC" autocomplete="off"><label for="toggleBTC">Bitcoin</label>
       </div>
        <div class="cell" title="Since 2010">
-        <span class="gpct">308.43</span>
+        <span class="gpct">291.33</span>
       </div>
       <div class="cell">
-        <span class="gpct">44.16</span>
+        <span class="rpct">-4.96</span>
       </div>
-       <div class="cell" title="Market Value: $0.14T">
+       <div class="cell" title="Market Value: $0.13T">
         0.02
       </div>
       <div class="cell" title="2011">
         <span class="rpct">−81.59</span>
       </div>
 	  <div class="cell">
-        8 months
+        10 months
       </div>
 	  <div class="cell">
-        <span class="rpct">-22.14</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
+        <span class="rpct">-19.84</span> <img src="img/down.png" class="arrow" alt="Below" title="Below" style="width:16px;height:16px;">
       </div>
     </div>
     
@@ -645,13 +645,13 @@ $(function(){var e=[{color:"#E6E6E6",from:Date.UTC(1873,9),to:Date.UTC(1879,2)},
         USA
       </div>
 	  <div class="cell">
-        3.90
+        3.70
       </div>
       <div class="cell" title="since 1948">
         5.77
       </div>
       <div class="cell">
-        <span class="gpct">3.10</span> <img src="img/up.png" class="arrow" alt="Above" title="Above" style="width:16px;height:16px;">
+        <span class="gpct">6.32</span> <img src="img/up.png" class="arrow" alt="Above" title="Above" style="width:16px;height:16px;">
       </div>
     </div>
     
@@ -660,13 +660,13 @@ $(function(){var e=[{color:"#E6E6E6",from:Date.UTC(1873,9),to:Date.UTC(1879,2)},
         Eurozone
       </div>
 	  <div class="cell">
-        8.20
+        8.10
       </div>
       <div class="cell" title="since 1995">
-        9.73
+        9.71
       </div>
       <div class="cell">
-        <span class="gpct">4.28</span> <img src="img/up.png" class="arrow" alt="Above" title="Above" style="width:16px;height:16px;">
+        <span class="gpct">3.76</span> <img src="img/up.png" class="arrow" alt="Above" title="Above" style="width:16px;height:16px;">
       </div>
     </div>
 	
@@ -675,13 +675,13 @@ $(function(){var e=[{color:"#E6E6E6",from:Date.UTC(1873,9),to:Date.UTC(1879,2)},
         Japan
       </div>
 	  <div class="cell">
-        2.50
+        2.30
       </div>
       <div class="cell" title="since 1953">
         2.73
       </div>
       <div class="cell">
-        <span class="gpct">2.59</span> <img src="img/up.png" class="arrow" alt="Above" title="Above" style="width:16px;height:16px;">
+        <span class="gpct">7.69</span> <img src="img/up.png" class="arrow" alt="Above" title="Above" style="width:16px;height:16px;">
       </div>
     </div>
 	
